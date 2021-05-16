@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login";
 import CreateParty from "./pages/CreateParty/CreateParty";
 import PlayOrCreate from "./pages/PlayOrCreate/PlayOrCreate";
 import PlayGame from "./pages/PlayGame/PlayGame";
+import CreateCard from "./pages/CreateCard/CreateCard";
 
 import "./App.css";
 
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/playorcreate/play">
             <PlayGame></PlayGame>
+          </Route>
+          <Route path="/playorcreate/create">
+            <CreateCard></CreateCard>
           </Route>
           <Route path="/playorcreate">
             <PlayOrCreate></PlayOrCreate>
