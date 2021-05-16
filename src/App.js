@@ -6,6 +6,7 @@ import CreateParty from "./pages/CreateParty/CreateParty";
 import PlayOrCreate from "./pages/PlayOrCreate/PlayOrCreate";
 import PlayGame from "./pages/PlayGame/PlayGame";
 import CreateCard from "./pages/CreateCard/CreateCard";
+import CardShow from "./pages/CardShow/CardShow";
 
 import "./App.css";
 
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/playorcreate/play">
             <PlayGame></PlayGame>
+          </Route>
+          <Route path="/playorcreate/create/:id">
+            <CardShow></CardShow>
           </Route>
           <Route path="/playorcreate/create">
             <CreateCard></CreateCard>
