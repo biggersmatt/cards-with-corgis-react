@@ -1,0 +1,7 @@
+nav {
+  background-color: aqua;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}

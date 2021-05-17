@@ -1,6 +1,8 @@
+// Dependencies
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
+// Pages
 import Login from "./pages/Login/Login";
 import CreateParty from "./pages/CreateParty/CreateParty";
 import PlayOrCreate from "./pages/PlayOrCreate/PlayOrCreate";
@@ -8,12 +10,17 @@ import PlayGame from "./pages/PlayGame/PlayGame";
 import CreateCard from "./pages/CreateCard/CreateCard";
 import CardShow from "./pages/CardShow/CardShow";
 
+// Components
+import Navbar from "./components/Navbar/Navbar";
+
+// CSS
 import "./App.css";
 
 function App() {
   return (
     <div>
-      <h1>Cards With Corgis</h1>
+      <Navbar></Navbar>
+      <header></header>
       <div>
         <Switch>
           <Route exact path="/">
