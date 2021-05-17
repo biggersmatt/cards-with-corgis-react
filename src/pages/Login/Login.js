@@ -1,6 +1,50 @@
+// React
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
+
+// CSS
 require("./Login.css");
 
 function Login() {
+  const [loginUser, setLoginUser] = useState({
+    firstName: "",
+    partyName: "",
+    password: "",
+  })
+
+  let [redirect, setRedirect] = useState(null);
+
+  const handleChange = (event) => {
+    if(event.target.id === "first-name") {
+      setLoginUser(prevLoginUser => {
+        return {
+          ...prevLoginUser,
+          firstName: event.target.value,
+        }
+      })
+    }
+    if(event.target.id === "party-name") {
+      setLoginUser(prevLoginUser => {
+        return {
+          ...prevLoginUser,
+          partyName: event.target.value,
+        }
+      })
+    }
+    if(event.target.id === "password") {
+      setLoginUser(prevLoginUser => {
+        return {
+          ...prevLoginUser,
+          password: event.target.value,
+        }
+      })
+    }
+  }
+
+  if(redirect) {
+    return <Redirect to={redirect} />
+  }
+
   return (
     <div className="login-container">
       <header>
@@ -16,6 +60,7 @@ function Login() {
             type="text"
             id="first-name"
             name="first-name"
+            onChange={handleChange}
           />
         </div>
         <div className="login-section">
@@ -24,6 +69,7 @@ function Login() {
             type="text"
             id="party-name"
             name="party-name"
+            onChange={handleChange}
           />
         </div>
         <div className="login-section">
@@ -32,6 +78,7 @@ function Login() {
             type="password"
             id="password"
             name="password"
+            onChange={handleChange}
           />
         </div>
         <button className="login-btn" type="submit">Login</button>
