@@ -5,7 +5,7 @@ function CreateParty() {
     <div className="create-party-container">
 
       <header>
-        <h1>Create a New Party</h1>
+        <h3>Create a New Party</h3>
         <p>Once you've created a Party, you'll be able to have anyone attending add custom cards they've created to the deck.</p>
       </header>
 
