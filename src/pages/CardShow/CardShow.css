@@ -1,3 +1,19 @@
-.card-show-content {
-  color: orange;
+.card-show-container {
+  height: calc(100vh - 25px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-show-wrapper {
+  background-color: orange;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+textarea {
+  padding: 5px;
 }
