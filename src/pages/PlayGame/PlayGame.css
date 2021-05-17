@@ -1,3 +1,27 @@
-.playgame-content {
-  color: purple;
+.playgame-container {
+  background-color: pink;
+  height: calc(100vh - 67px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+.playgame-wrapper {
+  height: 50%;
+  margin: 25px 0;
+  padding: 20px;
+}
+
+.playgame-author {
+  position: relative;
+  top: 75%;
+  left: 0%;
+}
+
+.playgame-next-btn {
+  height: 50px;
+  width: 70px;
+  border-radius: 100px;
 }
