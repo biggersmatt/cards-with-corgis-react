@@ -40,7 +40,6 @@ function Login() {
         <h3>- Or -</h3>
         <button className="login-create-party-btn">Create New Party</button>
       </div>
-
     </div>
   )
 }

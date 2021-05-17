@@ -1,3 +1,4 @@
-.create-party-content {
-  color: blue;
+.create-party-container {
+  background-color: orange;
+  height: calc(100vh - 25px);
 }
