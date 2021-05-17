@@ -20,7 +20,6 @@ function App() {
   return (
     <div>
       <Navbar></Navbar>
-      <header></header>
       <div>
         <Switch>
           <Route exact path="/">

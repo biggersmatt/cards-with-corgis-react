@@ -1,16 +1,16 @@
 .playgame-container {
-  background-color: pink;
   height: calc(100vh - 67px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
   margin: 20px;
 }
 
 .playgame-wrapper {
+  background-color: pink;
   height: 50%;
   margin: 25px 0;
+  border: 1px solid black;
   padding: 20px;
 }
 
