@@ -9,6 +9,7 @@ function CreateParty() {
   const [newParty, setNewParty] =useState({
     partyName: "",
     password: "",
+    confirmation: "",
   })
 
   let [redirect, setRedirect] = useState(null);
@@ -27,6 +28,14 @@ function CreateParty() {
         return {
           ...prevNewParty,
           password: event.target.value,
+        }
+      })
+    }
+    if(event.target.id === "confirmation") {
+      setNewParty(prevNewParty => {
+        return {
+          ...prevNewParty,
+          confirmation: event.target.value,
         }
       })
     }
@@ -52,7 +61,30 @@ function CreateParty() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleCreateParty();
+
+    if(newParty.partyName.length === 0 || newParty.password === 0) {
+      alert("Please fill out Party Name & Password fields");
+    } else if(newParty.partyName.length === 0) {
+      alert("Please fill out Party Name field");
+    } else if(newParty.password.length === 0) {
+      alert("Please fill out Password field");
+    } else if(newParty.password !== newParty.confirmation) {
+      alert("Passwords do not match");
+    } else if(newParty.password === newParty.confirmation) {
+      fetch("http://localhost:4000/party")
+      .then((response) => response.json())
+      .then((jsonData) => {
+        const parties = jsonData.allParties;
+        for(let i = 0; i < parties.length; i++) {
+          if(parties[i].partyName === newParty.partyName) {
+            return alert("That party name is already taken")
+          }
+        }
+        handleCreateParty();
+      })
+      .catch((err) => console.log(err));
+    }
+
   }
 
   if(redirect) {
@@ -82,6 +114,15 @@ function CreateParty() {
             type="password"
             id="password"
             name="password"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="login-section">
+          <label htmlFor="confirmation">Confirm Password</label>
+          <input 
+            type="password"
+            id="confirmation"
+            name="confirmation"
             onChange={handleChange}
           />
         </div>
