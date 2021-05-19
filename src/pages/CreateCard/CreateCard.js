@@ -6,16 +6,17 @@ import React, { useState } from "react";
 require("./CreateCard.css");
 
 function CreateCard(props) {
-  let [prompt, setPrompt] = useState("");
-
-  let [existingCards, setExistingCards] = useState(props.cards)
+  let [cardPage, setCardPage] = useState({
+    prompt: "",
+    existingCards: props.cards,
+  })
 
   // let [redirect, setRedirect] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const newCard = {
-      prompt: prompt,
+      prompt: cardPage.prompt,
       author: props.firstName,
       discard: false,
       partyId: props.userId,
@@ -28,20 +29,32 @@ function CreateCard(props) {
       body: JSON.stringify(newCard),
     })
     .then(() => alert("New Card Created"))
-    .then(() => setPrompt(prompt = ""))
+    .then(() => {
+      const addedCard = cardPage.existingCards;
+      addedCard.push(newCard);
+      setCardPage({
+        prompt: "",
+        existingCards: addedCard,
+      })
+    })
     .catch(err => console.log(err))
   }
 
   const handleChange = (event) => {
     if(event.target.id === "prompt") {
-      setPrompt(prompt = event.target.value)
+      setCardPage(prevCardPage => {
+        return {
+          ...prevCardPage,
+          prompt: event.target.value,
+        }
+      })
     }
   }
 
   // if(redirect) {
   //   return <Redirect to={redirect} />
   // }
-  console.log(existingCards)
+
   return (
     <div className="create-card-container">
       <header>
@@ -56,7 +69,7 @@ function CreateCard(props) {
         <textarea 
           name="prompt" 
           id="prompt" 
-          value={prompt}
+          value={cardPage.prompt}
           cols="30" 
           rows="10"
           onChange={handleChange}
