@@ -46,7 +46,6 @@ function CreateParty() {
       partyName: newParty.partyName,
       password: newParty.password,
     }
-    console.log(newPartyCreated)
     fetch("http://localhost:4000/party", {
       method: "POST",
       headers: {

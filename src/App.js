@@ -49,7 +49,7 @@ function App() {
             <CardShow></CardShow>
           </Route>
           <Route path="/playorcreate/create">
-            <CreateCard></CreateCard>
+            <CreateCard firstName={user.firstName}></CreateCard>
           </Route>
           <Route path="/playorcreate">
             <PlayOrCreate userId={user.userId} firstName={user.firstName} partyName={user.partyName}></PlayOrCreate>
