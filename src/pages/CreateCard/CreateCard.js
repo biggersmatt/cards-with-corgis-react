@@ -8,6 +8,8 @@ require("./CreateCard.css");
 function CreateCard(props) {
   let [prompt, setPrompt] = useState("");
 
+  let [existingCards, setExistingCards] = useState(props.cards)
+
   // let [redirect, setRedirect] = useState(null);
 
   const handleSubmit = (event) => {
@@ -16,6 +18,7 @@ function CreateCard(props) {
       prompt: prompt,
       author: props.firstName,
       discard: false,
+      partyId: props.userId,
     }
     fetch("http://localhost:4000/card", {
       method: "POST",
@@ -26,7 +29,7 @@ function CreateCard(props) {
     })
     .then(() => alert("New Card Created"))
     .then(() => setPrompt(prompt = ""))
-    .then(err => console.log(err))
+    .catch(err => console.log(err))
   }
 
   const handleChange = (event) => {
@@ -38,7 +41,7 @@ function CreateCard(props) {
   // if(redirect) {
   //   return <Redirect to={redirect} />
   // }
-
+  console.log(existingCards)
   return (
     <div className="create-card-container">
       <header>

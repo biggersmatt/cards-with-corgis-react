@@ -55,7 +55,7 @@ function CreateParty() {
     })
     .then(() => alert("New Party Created"))
     .then(() => setRedirect(redirect = "/"))
-    .then(err => console.log(err))
+    .catch(err => console.log(err))
   }
 
   const handleSubmit = (event) => {

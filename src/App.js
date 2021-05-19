@@ -21,14 +21,28 @@ function App() {
     userId: "",
     firstName: "",
     partyName: "",
+    cards: [],
   })
 
   const handleUserInfo = (userId, firstName, partyName) => {
-    setUser({
-      userId,
-      firstName,
-      partyName,
+    fetch("http://localhost:4000/card")
+    .then(response => response.json())
+    .then(jsonData => {
+      const allCards = jsonData.allCards;
+      let filteredCards = [];
+      allCards.forEach(card => {
+        if(card.partyId === userId && card.author === firstName) {
+          filteredCards.push(card);
+        }
+      })
+      setUser({
+        userId,
+        firstName,
+        partyName,
+        cards: filteredCards,
+      })
     })
+    .catch(err => console.log(err))
   }
 
   return (
@@ -49,10 +63,10 @@ function App() {
             <CardShow></CardShow>
           </Route>
           <Route path="/playorcreate/create">
-            <CreateCard userId={user.userId} firstName={user.firstName}></CreateCard>
+            <CreateCard userId={user.userId} firstName={user.firstName} cards={user.cards}></CreateCard>
           </Route>
           <Route path="/playorcreate">
-            <PlayOrCreate userId={user.userId} firstName={user.firstName} partyName={user.partyName}></PlayOrCreate>
+            <PlayOrCreate firstName={user.firstName} partyName={user.partyName}></PlayOrCreate>
           </Route>
         </Switch>
       </div>

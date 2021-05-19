@@ -69,8 +69,11 @@ function Login(props) {
         if(!loggedIn) {
           alert("Incorrect Login Information")
         }
+      } else {
+        alert("Create a Party")
       }
     })
+    .catch(err => console.log(err))
   }
 
 
