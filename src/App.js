@@ -20,12 +20,14 @@ function App() {
   const [user, setUser] = useState({
     userId: "",
     firstName: "",
+    partyName: "",
   })
 
-  const handleUserInfo = (userId, firstName) => {
+  const handleUserInfo = (userId, firstName, partyName) => {
     setUser({
       userId,
       firstName,
+      partyName,
     })
   }
 
@@ -50,7 +52,7 @@ function App() {
             <CreateCard></CreateCard>
           </Route>
           <Route path="/playorcreate">
-            <PlayOrCreate userId={user.userId} firstName={user.firstName}></PlayOrCreate>
+            <PlayOrCreate userId={user.userId} firstName={user.firstName} partyName={user.partyName}></PlayOrCreate>
           </Route>
         </Switch>
       </div>

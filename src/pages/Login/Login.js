@@ -44,7 +44,7 @@ function Login(props) {
   const handleUserCheck = (currentPartyName, currentPassword, userId) => {
     if(currentPartyName === loginUser.partyName && currentPassword === loginUser.password) {
       setRedirect(redirect = "/playorcreate" );
-      props.handleUserInfo(userId, loginUser.firstName);
+      props.handleUserInfo(userId, loginUser.firstName, loginUser.partyName);
       return true;
     }
   }
@@ -62,6 +62,9 @@ function Login(props) {
           const currentPassword = allParties[i].password;
           const userId = allParties[i]._id;
           loggedIn = handleUserCheck(currentPartyName, currentPassword, userId);
+        }
+        if(loggedIn) {
+          alert("Welcome to Cards With Corgis")
         }
         if(!loggedIn) {
           alert("Incorrect Login Information")
