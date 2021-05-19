@@ -78,10 +78,21 @@ function CreateCard(props) {
         <button type="submit">Create Card</button>
       </form>
 
-
       <div className="manage-cards">
         <h3>"First Name"'s Cards</h3>
-        <div className="manage-this-card">
+
+        {cardPage.existingCards.map(card => {
+          console.log(card)
+          return (
+            <div className="manage-this-card">
+              <p>Prompt</p>
+              <button>Edit</button>
+              <button>Delete</button>
+            </div>
+          )
+        })}
+
+        {/* <div className="manage-this-card">
           <p>Prompt</p>
           <button>Edit</button>
           <button>Delete</button>
@@ -120,12 +131,7 @@ function CreateCard(props) {
           <p>Prompt</p>
           <button>Edit</button>
           <button>Delete</button>
-        </div>
-        <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
+        </div> */}
       </div>
     </div>
   )
