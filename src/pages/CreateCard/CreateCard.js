@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 // import { Redirect } from "react-router-dom";
 
+// Components
+import ExistingCard from "../../components/ExistingCard/ExistingCard";
+
 // CSS
 require("./CreateCard.css");
 
@@ -59,7 +62,7 @@ function CreateCard(props) {
     <div className="create-card-container">
       <header>
         <h3>Welcome {props.firstName}</h3>
-        <p>Create new cards to add to the deck.</p>
+        <p>Create new cards for {props.partyName}</p>
         <p>Manage cards that you have already created.</p>
       </header>
 
@@ -78,60 +81,23 @@ function CreateCard(props) {
         <button type="submit">Create Card</button>
       </form>
 
-      <div className="manage-cards">
-        <h3>"First Name"'s Cards</h3>
-
-        {cardPage.existingCards.map(card => {
-          console.log(card)
-          return (
-            <div className="manage-this-card">
-              <p>Prompt</p>
-              <button>Edit</button>
-              <button>Delete</button>
-            </div>
-          )
-        })}
-
-        {/* <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
+      <div className="manage-cards-wrapper">
+      <h3>{props.firstName}'s Cards</h3>
+        <div className="manage-cards">
+          {cardPage.existingCards.map(card => {
+            return <ExistingCard 
+                      key={card._id}
+                      prompt={card.prompt}
+                  />
+            // return (
+            //   <div className="manage-this-card" key={card._id}>
+            //     <p>{card.prompt}</p>
+            //     <button>Edit</button>
+            //     <button>Delete</button>
+            //   </div>
+            // )
+          })}
         </div>
-        <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
-        <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
-        <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
-        <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
-        <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
-        <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div>
-        <div className="manage-this-card">
-          <p>Prompt</p>
-          <button>Edit</button>
-          <button>Delete</button>
-        </div> */}
       </div>
     </div>
   )

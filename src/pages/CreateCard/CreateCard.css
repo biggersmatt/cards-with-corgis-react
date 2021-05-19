@@ -18,8 +18,15 @@ textarea {
   resize: none;
 }
 
-.manage-cards {
+.manage-cards-wrapper {
   height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manage-cards {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
