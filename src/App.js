@@ -1,5 +1,5 @@
 // Dependencies
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
 // Pages
@@ -17,13 +17,25 @@ import Navbar from "./components/Navbar/Navbar";
 import "./App.css";
 
 function App() {
+  const [user, setUser] = useState({
+    userId: "",
+    firstName: "",
+  })
+
+  const handleUserInfo = (userId, firstName) => {
+    setUser({
+      userId,
+      firstName,
+    })
+  }
+
   return (
     <div>
       <Navbar></Navbar>
       <div>
         <Switch>
           <Route exact path="/">
-            <Login></Login>
+            <Login handleUserInfo={handleUserInfo}></Login>
           </Route>
           <Route path="/createparty">
             <CreateParty></CreateParty>
@@ -38,7 +50,7 @@ function App() {
             <CreateCard></CreateCard>
           </Route>
           <Route path="/playorcreate">
-            <PlayOrCreate></PlayOrCreate>
+            <PlayOrCreate userId={user.userId} firstName={user.firstName}></PlayOrCreate>
           </Route>
         </Switch>
       </div>

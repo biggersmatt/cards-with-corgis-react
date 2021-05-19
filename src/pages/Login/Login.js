@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 // CSS
 require("./Login.css");
 
-function Login() {
+function Login(props) {
   const [loginUser, setLoginUser] = useState({
     firstName: "",
     partyName: "",
@@ -44,7 +44,7 @@ function Login() {
   const handleUserCheck = (currentPartyName, currentPassword, userId) => {
     if(currentPartyName === loginUser.partyName && currentPassword === loginUser.password) {
       setRedirect(redirect = "/playorcreate" );
-      // props.handleUserId(currentPartyName, userId);
+      props.handleUserInfo(userId, loginUser.firstName);
       return true;
     }
   }
