@@ -6,37 +6,32 @@ import React, { useState } from "react";
 require("./CreateCard.css");
 
 function CreateCard(props) {
-
-  const [card, setCard] = useState({
-    prompt: "",
-  })
+  let [prompt, setPrompt] = useState("");
 
   // let [redirect, setRedirect] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const newCard = {
-      prompt: card.prompt,
+      prompt: prompt,
       author: props.firstName,
       discard: false,
     }
-
-    console.log(newCard);
-    setCard({
-      prompt: "",
+    fetch("http://localhost:4000/card", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newCard),
     })
-
-    alert("New Card Created")
+    .then(() => alert("New Card Created"))
+    .then(() => setPrompt(prompt = ""))
+    .then(err => console.log(err))
   }
 
   const handleChange = (event) => {
     if(event.target.id === "prompt") {
-      setCard(prevCard => {
-        return {
-          ...prevCard,
-          prompt: event.target.value,
-        }
-      })
+      setPrompt(prompt = event.target.value)
     }
   }
 
@@ -58,7 +53,7 @@ function CreateCard(props) {
         <textarea 
           name="prompt" 
           id="prompt" 
-          value={card.prompt}
+          value={prompt}
           cols="30" 
           rows="10"
           onChange={handleChange}
