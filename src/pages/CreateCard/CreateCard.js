@@ -1,42 +1,53 @@
 // React
 import React, { useState } from "react";
+// import { Redirect } from "react-router-dom";
 
 // CSS
 require("./CreateCard.css");
 
 function CreateCard(props) {
 
-  const [prompt, setPrompt] = useState({
+  const [card, setCard] = useState({
     prompt: "",
   })
+
+  // let [redirect, setRedirect] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const newCard = {
-      prompt: prompt.prompt,
+      prompt: card.prompt,
       author: props.firstName,
       discard: false,
     }
 
     console.log(newCard);
+    setCard({
+      prompt: "",
+    })
 
+    alert("New Card Created")
   }
 
   const handleChange = (event) => {
     if(event.target.id === "prompt") {
-      setPrompt(prevPrompt => {
+      setCard(prevCard => {
         return {
-          ...prevPrompt,
+          ...prevCard,
           prompt: event.target.value,
         }
       })
     }
   }
 
+  // if(redirect) {
+  //   return <Redirect to={redirect} />
+  // }
+
   return (
     <div className="create-card-container">
       <header>
-        <h3>Welcome "First Name"</h3>
+        <h3>Welcome {props.firstName}</h3>
         <p>Create new cards to add to the deck.</p>
         <p>Manage cards that you have already created.</p>
       </header>
@@ -47,6 +58,7 @@ function CreateCard(props) {
         <textarea 
           name="prompt" 
           id="prompt" 
+          value={card.prompt}
           cols="30" 
           rows="10"
           onChange={handleChange}

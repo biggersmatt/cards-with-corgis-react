@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 require("./CreateParty.css");
 
 function CreateParty() {
-  const [newParty, setNewParty] =useState({
+  const [newParty, setNewParty] = useState({
     partyName: "",
     password: "",
     confirmation: "",
