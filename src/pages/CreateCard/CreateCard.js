@@ -1,6 +1,5 @@
 // React
 import React, { useState } from "react";
-// import { Redirect } from "react-router-dom";
 
 // Components
 import ExistingCard from "../../components/ExistingCard/ExistingCard";
@@ -13,8 +12,6 @@ function CreateCard(props) {
     prompt: "",
     existingCards: props.cards,
   })
-
-  // let [redirect, setRedirect] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -54,10 +51,6 @@ function CreateCard(props) {
     }
   }
 
-  // if(redirect) {
-  //   return <Redirect to={redirect} />
-  // }
-
   return (
     <div className="create-card-container">
       <header>
@@ -87,16 +80,9 @@ function CreateCard(props) {
           {cardPage.existingCards.map(card => {
             return <ExistingCard 
                       key={card._id}
-                      reactKey={card._id}
+                      cardId={card._id}
                       prompt={card.prompt}
                     />
-            // return (
-            //   <div className="manage-this-card" key={card._id}>
-            //     <p>{card.prompt}</p>
-            //     <button>Edit</button>
-            //     <button>Delete</button>
-            //   </div>
-            // )
           })}
         </div>
       </div>
