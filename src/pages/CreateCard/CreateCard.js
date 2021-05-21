@@ -87,8 +87,9 @@ function CreateCard(props) {
           {cardPage.existingCards.map(card => {
             return <ExistingCard 
                       key={card._id}
+                      reactKey={card._id}
                       prompt={card.prompt}
-                  />
+                    />
             // return (
             //   <div className="manage-this-card" key={card._id}>
             //     <p>{card.prompt}</p>
