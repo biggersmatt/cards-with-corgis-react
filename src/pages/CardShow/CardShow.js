@@ -1,6 +1,29 @@
+// React
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+// CSS
 require("./CardShow.css");
 
 function CardShow() {
+  const [card, setCard] = useState({});
+  const { id } = useParams();
+
+  const handleFetchThisCard = () => {
+    fetch(`http://localhost:4000/card/${id}`)
+    .then(response => response.json())
+    .then(jsonData => {
+      const thisCard = jsonData.foundCard;
+      setCard(thisCard);
+    })
+    .catch(err => console.log(err));
+  }
+
+  useEffect(() => {
+    handleFetchThisCard();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <div className="card-show-container">
       <header>
@@ -14,7 +37,7 @@ function CardShow() {
           id="prompt" 
           cols="30" 
           rows="10"
-          placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, qui?"
+          placeholder={`${card.prompt}`}
           >
           </textarea>
         <button>Update Card</button>
