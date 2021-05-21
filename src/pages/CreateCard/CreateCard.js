@@ -1,5 +1,5 @@
 // React
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Components
 import ExistingCard from "../../components/ExistingCard/ExistingCard";
@@ -10,8 +10,29 @@ require("./CreateCard.css");
 function CreateCard(props) {
   let [cardPage, setCardPage] = useState({
     prompt: "",
-    existingCards: props.cards,
+    existingCards: [],
   })
+
+  useEffect(() => {
+    let filteredCards = [];
+    fetch("http://localhost:4000/card")
+    .then(response => response.json())
+    .then(jsonData => {
+      const allCards = jsonData.allCards;
+      allCards.forEach(card => {
+        if(card.partyId === props.userId && card.author === props.firstName) {
+          filteredCards.push(card);
+        }
+      })
+    })
+    .then(() => setCardPage({
+      existingCards: filteredCards,
+    }))
+    .catch(err => console.log(err));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
+
 
   const handleSubmit = (event) => {
     event.preventDefault();

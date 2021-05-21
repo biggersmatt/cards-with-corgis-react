@@ -52,9 +52,7 @@ function CardShow(props) {
   if(redirect) {
     return <Redirect to={redirect} />
   }
-  if(redirect) {
-    return <Redirect to={redirect} />
-  }
+
   return (
     <div className="card-show-container">
       <header>
