@@ -32,8 +32,6 @@ function CreateCard(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const newCard = {
@@ -79,8 +77,6 @@ function CreateCard(props) {
         <p>Create new cards for {props.partyName}</p>
         <p>Manage cards that you have already created.</p>
       </header>
-
-
       <form className="create-card-wrapper" onSubmit={handleSubmit}>
         <h3>Create a New Card</h3>
         <textarea 
@@ -94,7 +90,6 @@ function CreateCard(props) {
           </textarea>
         <button type="submit">Create Card</button>
       </form>
-
       <div className="manage-cards-wrapper">
       <h3>{props.firstName}'s Cards</h3>
         <div className="manage-cards">

@@ -21,28 +21,14 @@ function App() {
     userId: "",
     firstName: "",
     partyName: "",
-    cards: [],
   })
 
   const handleUserInfo = (userId, firstName, partyName) => {
-    // fetch("http://localhost:4000/card")
-    // .then(response => response.json())
-    // .then(jsonData => {
-    //   const allCards = jsonData.allCards;
-    //   let filteredCards = [];
-    //   allCards.forEach(card => {
-    //     if(card.partyId === userId && card.author === firstName) {
-    //       filteredCards.push(card);
-    //     }
-    //   })
-      setUser({
-        userId,
-        firstName,
-        partyName,
-        // cards: filteredCards,
-      })
-    // })
-    // .catch(err => console.log(err))
+    setUser({
+      userId,
+      firstName,
+      partyName,
+    })
   }
 
   return (
