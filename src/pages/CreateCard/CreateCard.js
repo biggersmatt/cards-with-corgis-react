@@ -1,5 +1,6 @@
 // React
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 // Components
 import ExistingCard from "../../components/ExistingCard/ExistingCard";
@@ -12,6 +13,7 @@ function CreateCard(props) {
     prompt: "",
     existingCards: [],
   })
+  const { id } = useParams();
 
   useEffect(() => {
     let filteredCards = [];
