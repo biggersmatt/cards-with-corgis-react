@@ -10,7 +10,7 @@ function PlayGame(props) {
     index: 0,
     activeCard: {},
     deck: [],
-    discard: [],
+    corgis: [],
   })
   let [redirect, setRedirect] = useState(null);
 
@@ -43,10 +43,16 @@ function PlayGame(props) {
         }
       })
       const shuffledCards = shuffle(filteredCards);
-      setCards({
-        index: cards.index,
-        activeCard: shuffledCards[cards.index],
-        deck: shuffledCards,
+      fetch("https://dog.ceo/api/breed/corgi/images")
+      .then(response => response.json())
+      .then(jsonData => {
+        const corgis = jsonData.message;
+        setCards({
+          index: cards.index,
+          activeCard: shuffledCards[cards.index],
+          deck: shuffledCards,
+          corgis: corgis,
+        })
       })
     })
     .catch(err => console.log(err));
@@ -59,6 +65,7 @@ function PlayGame(props) {
         index: newIndex,
         activeCard: cards.deck[newIndex],
         deck: cards.deck,
+        corgis: cards.corgis,
       })
     } else {
       alert("Out of Cards");
@@ -70,12 +77,23 @@ function PlayGame(props) {
     return <Redirect to={redirect} />
   }
 
+  const imageURL = cards.corgis[1];
+
+  const divStyle = {
+    backgroundImage: "url(" + imageURL + ")",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  };
+
   return (
     <div className="playgame-container">
       <h1>{props.partyName}</h1>
-      <div className="playgame-wrapper">
-        <h4>{cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}</h4>
-        <h5 className="playgame-author">{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h5>
+      <div className="playgame-wrapper" style={divStyle}>
+        <div className="playgame-prompt-bg">
+          <h4>{cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}</h4>
+          <h5 className="playgame-author">{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h5>
+        </div>
       </div>
       {cards.activeCard ? 
         <button className="playgame-next-btn" onClick={handleNextCard}>Next</button>
