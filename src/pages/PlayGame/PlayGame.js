@@ -70,7 +70,6 @@ function PlayGame(props) {
     return <Redirect to={redirect} />
   }
 
-  console.log(cards.activeCard)
   return (
     <div className="playgame-container">
       <h1>{props.partyName}</h1>

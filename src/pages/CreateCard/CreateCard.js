@@ -33,6 +33,7 @@ function CreateCard(props) {
     })
     .then(() => setCardPage({
       existingCards: filteredCards,
+      prompt: "",
     }))
     .catch(err => console.log(err));
   }
