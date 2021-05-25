@@ -1,6 +1,5 @@
 // React
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 // Components
 import ExistingCard from "../../components/ExistingCard/ExistingCard";
@@ -13,9 +12,28 @@ function CreateCard(props) {
     prompt: "",
     existingCards: [],
   })
-  const { id } = useParams();
 
   useEffect(() => {
+    handleExistingCards();
+    // let filteredCards = [];
+    // fetch("http://localhost:4000/card")
+    // .then(response => response.json())
+    // .then(jsonData => {
+    //   const allCards = jsonData.allCards;
+    //   allCards.forEach(card => {
+    //     if(card.partyId === props.userId && card.author === props.firstName) {
+    //       filteredCards.push(card);
+    //     }
+    //   })
+    // })
+    // .then(() => setCardPage({
+    //   existingCards: filteredCards,
+    // }))
+    // .catch(err => console.log(err));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
+  const handleExistingCards = () => {
     let filteredCards = [];
     fetch("http://localhost:4000/card")
     .then(response => response.json())
@@ -31,8 +49,7 @@ function CreateCard(props) {
       existingCards: filteredCards,
     }))
     .catch(err => console.log(err));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,7 +69,7 @@ function CreateCard(props) {
     .then(() => alert("New Card Created"))
     .then(() => {
       const addedCard = cardPage.existingCards;
-      addedCard.push(newCard);
+      addedCard.unshift(newCard);
       setCardPage({
         prompt: "",
         existingCards: addedCard,
@@ -100,6 +117,7 @@ function CreateCard(props) {
                       key={card._id}
                       cardId={card._id}
                       prompt={card.prompt}
+                      handleExistingCards={handleExistingCards}
                     />
           })}
         </div>

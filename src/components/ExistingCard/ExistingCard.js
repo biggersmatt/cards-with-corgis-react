@@ -13,6 +13,7 @@ function ExistingCard(props) {
       },
     })
     .then(() => alert("Card Deleted"))
+    .then(() => props.handleExistingCards())
     .catch((err) => console.log(err))
   }
   
