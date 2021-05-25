@@ -82,7 +82,7 @@ function PlayGame(props) {
   const divStyle = {
     backgroundImage: "url(" + imageURL + ")",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
+    backgroundSize: "contain",
     backgroundPosition: "center",
   };
 
