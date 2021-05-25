@@ -6,6 +6,7 @@ require("./PlayGame.css")
 
 function PlayGame(props) {
   let [cards, setCards] = useState({
+    index: 0,
     activeCard: {},
     deck: [],
     discard: [],
@@ -41,10 +42,25 @@ function PlayGame(props) {
       })
       const shuffledCards = shuffle(filteredCards);
       setCards({
+        index: cards.index,
+        activeCard: shuffledCards[cards.index],
         deck: shuffledCards,
       })
     })
     .catch(err => console.log(err));
+  }
+
+  const handleNextCard = () => {
+    if(cards.deck.length - 1 > cards.index) {
+      let newIndex = cards.index + 1;
+      setCards({
+        index: newIndex,
+        activeCard: cards.deck[newIndex],
+        deck: cards.deck,
+      })
+    } else {
+      alert("Out of Cards");
+    }
   }
 
   return (
@@ -54,7 +70,7 @@ function PlayGame(props) {
         <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, qui?</h4>
         <h5 className="playgame-author">Created By: "firstName"</h5>
       </div>
-      <button className="playgame-next-btn">Next</button>
+      <button className="playgame-next-btn" onClick={handleNextCard}>Next</button>
     </div>
   )
 }
