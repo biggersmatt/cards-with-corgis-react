@@ -15,21 +15,6 @@ function CreateCard(props) {
 
   useEffect(() => {
     handleExistingCards();
-    // let filteredCards = [];
-    // fetch("http://localhost:4000/card")
-    // .then(response => response.json())
-    // .then(jsonData => {
-    //   const allCards = jsonData.allCards;
-    //   allCards.forEach(card => {
-    //     if(card.partyId === props.userId && card.author === props.firstName) {
-    //       filteredCards.push(card);
-    //     }
-    //   })
-    // })
-    // .then(() => setCardPage({
-    //   existingCards: filteredCards,
-    // }))
-    // .catch(err => console.log(err));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
@@ -44,6 +29,7 @@ function CreateCard(props) {
           filteredCards.push(card);
         }
       })
+      filteredCards.reverse();
     })
     .then(() => setCardPage({
       existingCards: filteredCards,
@@ -67,14 +53,15 @@ function CreateCard(props) {
       body: JSON.stringify(newCard),
     })
     .then(() => alert("New Card Created"))
-    .then(() => {
-      const addedCard = cardPage.existingCards;
-      addedCard.unshift(newCard);
-      setCardPage({
-        prompt: "",
-        existingCards: addedCard,
-      })
-    })
+    .then(() => handleExistingCards())
+    // .then(() => {
+    //   const addedCard = cardPage.existingCards;
+    //   addedCard.unshift(newCard);
+    //   setCardPage({
+    //     prompt: "",
+    //     existingCards: addedCard,
+    //   })
+    // })
     .catch(err => console.log(err))
   }
 
