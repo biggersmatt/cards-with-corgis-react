@@ -54,14 +54,6 @@ function CreateCard(props) {
     })
     .then(() => alert("New Card Created"))
     .then(() => handleExistingCards())
-    // .then(() => {
-    //   const addedCard = cardPage.existingCards;
-    //   addedCard.unshift(newCard);
-    //   setCardPage({
-    //     prompt: "",
-    //     existingCards: addedCard,
-    //   })
-    // })
     .catch(err => console.log(err))
   }
 
