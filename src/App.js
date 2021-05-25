@@ -31,9 +31,18 @@ function App() {
     })
   }
 
+  const handleSignOut = () => {
+    setUser({
+      userId: "",
+      firstName: "",
+      partyName: "",
+    })
+    alert("You have signed out")
+  }
+
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar userId={user.userId} handleSignOut={handleSignOut}></Navbar>
       <div>
         <Switch>
           <Route exact path="/">
