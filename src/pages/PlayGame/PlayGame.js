@@ -74,10 +74,13 @@ function PlayGame(props) {
     <div className="playgame-container">
       <h1>{props.partyName}</h1>
       <div className="playgame-wrapper">
-        <h4>{cards.activeCard.prompt}</h4>
-        <h5 className="playgame-author">Created By: {cards.activeCard.author}</h5>
+        <h4>{cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}</h4>
+        <h5 className="playgame-author">{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h5>
       </div>
-      <button className="playgame-next-btn" onClick={handleNextCard}>Next</button>
+      {cards.activeCard ? 
+        <button className="playgame-next-btn" onClick={handleNextCard}>Next</button>
+        : <button className="playgame-next-btn" onClick={() => setRedirect(redirect = "/playorcreate/create")}>Create Cards</button>
+      }
     </div>
   )
 }
