@@ -43,7 +43,7 @@ function App() {
             <CreateParty></CreateParty>
           </Route>
           <Route path="/playorcreate/play">
-            <PlayGame userId={user.userId}></PlayGame>
+            <PlayGame userId={user.userId} partyName={user.partyName}></PlayGame>
           </Route>
           <Route path="/playorcreate/create/:id">
             <CardShow></CardShow>

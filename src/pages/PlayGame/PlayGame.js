@@ -70,12 +70,13 @@ function PlayGame(props) {
     return <Redirect to={redirect} />
   }
 
+  console.log(cards.activeCard)
   return (
     <div className="playgame-container">
-      <h1>"Party Name"</h1>
+      <h1>{props.partyName}</h1>
       <div className="playgame-wrapper">
-        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, qui?</h4>
-        <h5 className="playgame-author">Created By: "firstName"</h5>
+        <h4>{cards.activeCard.prompt}</h4>
+        <h5 className="playgame-author">Created By: {cards.activeCard.author}</h5>
       </div>
       <button className="playgame-next-btn" onClick={handleNextCard}>Next</button>
     </div>
