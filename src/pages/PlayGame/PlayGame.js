@@ -1,5 +1,6 @@
 // React
 import { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 
 // CSS
 require("./PlayGame.css")
@@ -11,6 +12,7 @@ function PlayGame(props) {
     deck: [],
     discard: [],
   })
+  let [redirect, setRedirect] = useState(null);
 
   useEffect(() => {
     handleAllCards();
@@ -60,7 +62,12 @@ function PlayGame(props) {
       })
     } else {
       alert("Out of Cards");
+      setRedirect(redirect = "/playorcreate")
     }
+  }
+
+  if(redirect) {
+    return <Redirect to={redirect} />
   }
 
   return (

@@ -5,7 +5,7 @@ import { Redirect, useParams } from "react-router-dom";
 // CSS
 require("./CardShow.css");
 
-function CardShow(props) {
+function CardShow() {
   const [card, setCard] = useState({});
   let [redirect, setRedirect] = useState(null);
   const { id } = useParams();
