@@ -83,13 +83,15 @@ function Login(props) {
 
   return (
     <div className="login-container">
+
       <header>
         <h3>Cards With Corgis</h3>
         <p>Log into your party to play with your deck.</p>
         <p>To create a new party, click the button below.</p>
       </header>
+
       <form className="login-wrapper" onSubmit={handleSubmit}>
-        <h4>Login</h4>
+        <h4>Party Login</h4>
         <div className="login-section">
           <label htmlFor="first-name">Enter Your First Name</label>
           <input 
@@ -119,6 +121,7 @@ function Login(props) {
         </div>
         <button className="login-btn" type="submit">Login</button>
       </form>
+
       <div className="login-create-party">
         <h3>- Or -</h3>
         <button 
@@ -127,6 +130,7 @@ function Login(props) {
           Create New Party
         </button>
       </div>
+
     </div>
   )
 }

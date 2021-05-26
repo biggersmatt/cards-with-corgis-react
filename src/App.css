@@ -9,10 +9,6 @@
 }
 
 body {
-  background-image: url("https://images.unsplash.com/photo-1557973557-ddfa9ee8c5bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80");
-  background-position: 55% 50%;
-  background-color: var(--corange);
-  background-repeat: no-repeat;
   height: 100%;
   width: 100vw;
   display: flex;
@@ -23,12 +19,35 @@ body {
 
 header {
   height: 25%;
+  width: 75%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 0 10px;
+  justify-content: center;
+  padding: 10px;
+  margin: 5px;
+}
+
+header h3 {
+  font-size: 9vw;
+  padding: 1vw;
+}
+
+header p {
+  font-size: 5vw;
+  padding: 1vw;
 }
 
 .shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (min-width: 550px) {
+  header h3 {
+    font-size: 49.5px;
+  }
+  
+  header p {
+    font-size: 27.5px;
+  }
 }

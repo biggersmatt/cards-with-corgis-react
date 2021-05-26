@@ -17,3 +17,13 @@ nav {
   cursor: pointer;
   transform: scale(1.25);
 }
+
+@media (min-width: 550px) {
+  /* nav {
+    background-color: pink;
+  } */
+
+  .navbar-link {
+    font-size: 33px;
+  }
+}
