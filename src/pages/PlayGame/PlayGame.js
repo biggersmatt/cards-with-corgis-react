@@ -47,11 +47,18 @@ function PlayGame(props) {
       .then(response => response.json())
       .then(jsonData => {
         const corgis = jsonData.message;
+        let randomCorgis = [];
+        shuffledCards.forEach(card => {
+          randomCorgis.push(corgis[Math.floor(Math.random() * corgis.length)])
+        })
+        randomCorgis.pop();
+        randomCorgis.push("https://images.unsplash.com/photo-1575844261401-d69721eb5044?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
+        const shuffledCorgis = shuffle(randomCorgis);
         setCards({
           index: cards.index,
           activeCard: shuffledCards[cards.index],
           deck: shuffledCards,
-          corgis: corgis,
+          corgis: shuffledCorgis,
         })
       })
     })
@@ -77,7 +84,8 @@ function PlayGame(props) {
     return <Redirect to={redirect} />
   }
 
-  const imageURL = cards.corgis[Math.floor(Math.random() * cards.corgis.length)];
+  // const imageURL = cards.corgis[Math.floor(Math.random() * cards.corgis.length)];
+  const imageURL = cards.corgis[cards.index];
 
   const divStyle = {
     backgroundImage: "url(" + imageURL + ")",
