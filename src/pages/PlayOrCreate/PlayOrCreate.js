@@ -14,10 +14,11 @@ function PlayOrCreate(props) {
 
   return (
     <div className="play-or-create-container">
-      <header>
-        <h3>Welcome to {props.partyName}!</h3>
-        <p>Play Cards With Corgis with the cards that have been added to this party's deck.</p>
-        <p>Click Cards to create, edit or delete cards that you have created.</p>
+      <header className="play-or-create-header">
+        <h3>Deck: {props.partyName}!</h3>
+        <p>"Play" shuffles all the cards in this deck so you can play Cards With Corgis!</p>
+        <p>"Cards" allows you to create new cards for this deck or edit/remove cards that you have already created.</p>
+        <p>Cards you have created will be searched for by the first name that you provided. It is case sensitive!</p>
       </header>
 
       <div className="play-or-create-wrapper">
