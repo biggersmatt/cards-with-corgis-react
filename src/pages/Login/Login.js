@@ -86,8 +86,9 @@ function Login(props) {
 
       <header>
         <h3>Cards With Corgis</h3>
-        <p>Log into your party to play with your deck.</p>
-        <p>To create a new party, click the button below.</p>
+        <p>Login to play with your deck.</p>
+        <p>To create a new deck, click the button below.</p>
+        <p>Your first name is how the deck finds your cards. Be sure to type it correctly.</p>
       </header>
 
       <form className="login-wrapper" onSubmit={handleSubmit}>
@@ -102,7 +103,7 @@ function Login(props) {
           />
         </div>
         <div className="login-section">
-          <label htmlFor="party-name">Party Name</label>
+          <label htmlFor="party-name">Deck Name</label>
           <input 
             type="text"
             id="party-name"
@@ -111,7 +112,7 @@ function Login(props) {
           />
         </div>
         <div className="login-section">
-          <label htmlFor="password">Party Password</label>
+          <label htmlFor="password">Deck Password</label>
           <input 
             type="password"
             id="password"
@@ -127,7 +128,7 @@ function Login(props) {
         <button 
           className="login-create-party-btn" 
           onClick={() => setRedirect(redirect = "/createparty")}>
-          Create New Party
+          Create New Deck
         </button>
       </div>
 

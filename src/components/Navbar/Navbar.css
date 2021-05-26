@@ -1,5 +1,5 @@
 nav {
-  background-color: aqua;
+  background-color: var(--corange);
   height: 8vh;
   width: 100vw;
   display: flex;
@@ -8,6 +8,7 @@ nav {
 }
 
 .navbar-link {
+  color: white;
   font-size: 6vw;
   text-decoration: none;
   transition: transform 0.4s ease;
