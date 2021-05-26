@@ -84,7 +84,6 @@ function PlayGame(props) {
     return <Redirect to={redirect} />
   }
 
-  // const imageURL = cards.corgis[Math.floor(Math.random() * cards.corgis.length)];
   const imageURL = cards.corgis[cards.index];
 
   const divStyle = {

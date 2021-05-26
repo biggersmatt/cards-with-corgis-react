@@ -1,10 +1,18 @@
+:root {
+  --corange: rgb(213,158,112)
+}
+
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Yanone Kaffeesatz';
 }
 
 body {
-  background-color: yellow;
+  background-image: url("https://images.unsplash.com/photo-1557973557-ddfa9ee8c5bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80");
+  background-position: 55% 50%;
+  background-color: var(--corange);
+  background-repeat: no-repeat;
   height: 100%;
   width: 100vw;
   display: flex;
@@ -19,4 +27,8 @@ header {
   flex-direction: column;
   justify-content: space-around;
   padding: 0 10px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

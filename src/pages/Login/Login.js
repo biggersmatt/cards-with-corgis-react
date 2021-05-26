@@ -109,7 +109,7 @@ function Login(props) {
           />
         </div>
         <div className="login-section">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Party Password</label>
           <input 
             type="password"
             id="password"

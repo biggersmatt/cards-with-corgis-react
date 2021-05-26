@@ -3,8 +3,7 @@ require("./Navbar.css");
 
 function Navbar(props) {
   return (
-    <nav>
-      {/* <Link to="/createparty" className="navbar-link">New Party</Link>  */}
+    <nav className="shadow">
       {!props.userId ? 
       <Link to="/createparty" className="navbar-link">New Party</Link>  
         : null

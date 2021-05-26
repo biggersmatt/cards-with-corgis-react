@@ -1,9 +1,9 @@
 .playgame-container {
-  height: calc(100vh - 67px);
+  height: calc((100vh - 8vh - 40px));
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 20px 0;
 }
 
 .playgame-wrapper {
@@ -14,7 +14,7 @@
 }
 
 .playgame-prompt-bg {
-  background: rgba(204, 204, 204, 0.5);
+  background: rgba(204, 204, 204, 0.3);
   border-radius: 5px;
   height: 100%;
   display: flex;
