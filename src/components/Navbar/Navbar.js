@@ -5,7 +5,7 @@ function Navbar(props) {
   return (
     <nav className="shadow">
       {!props.userId ? 
-      <Link to="/createparty" className="navbar-link">New Party</Link>  
+      <Link to="/createparty" className="navbar-link">New Deck</Link>  
         : null
       }
       {!props.userId ? 

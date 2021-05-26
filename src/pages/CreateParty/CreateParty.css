@@ -1,4 +1,42 @@
 .create-party-container {
-  background-color: orange;
   height: calc(100vh - 8vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1557973557-ddfa9ee8c5bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80");
+  background-position: 55% 50%;
+  background-color: var(--corange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.new-wrapper {
+  background-color: rgba(255,255,255,0.5);
+  height: 70%;
+  width: 70%;
+  max-width: 500px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+
+.new-wrapper h4 {
+  font-size: 9vw;
+  margin-top: 20px;
+}
+
+.new-btn {
+  height: 5vh;
+  width: 40vw;
+  font-size: 6vw;
+  border-radius: 5px;
+  transition: transform 0.4s ease;
+}
+
+.new-btn:hover {
+  cursor: pointer;
+  transform: scale(1.10);
 }

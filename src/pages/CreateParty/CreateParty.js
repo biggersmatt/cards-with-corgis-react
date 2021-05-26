@@ -92,14 +92,16 @@ function CreateParty() {
 
   return (
     <div className="create-party-container">
+
       <header>
-        <h3>Create a New Party</h3>
-        <p>Once you've created a Party, you'll be able to have anyone attending add custom cards they've created to the deck.</p>
+        <h3>Create a New Deck</h3>
+        <p>Once you've created a Deck, you'll be able to have anyone you provide the login info to add custom cards they've created.</p>
       </header>
-      <form className="login-wrapper" onSubmit={handleSubmit}>
-        <h4>What's Your Party Name?</h4>
+
+      <form className="new-wrapper" onSubmit={handleSubmit}>
+        <h4>What's Your Deck Name?</h4>
         <div className="login-section">
-          <label htmlFor="party-name">Party Name</label>
+          <label htmlFor="party-name">Deck Name</label>
           <input 
             type="text"
             id="party-name"
@@ -108,7 +110,7 @@ function CreateParty() {
             />
         </div>
         <div className="login-section">
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Deck Password</label>
           <input 
             type="password"
             id="password"
@@ -125,7 +127,7 @@ function CreateParty() {
             onChange={handleChange}
           />
         </div>
-        <button className="login-btn" type="submit">Create New Party</button>
+        <button className="new-btn" type="submit">Create New Deck</button>
       </form>
 
     </div>
