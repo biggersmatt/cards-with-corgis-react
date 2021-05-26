@@ -82,7 +82,7 @@ function PlayGame(props) {
   const divStyle = {
     backgroundImage: "url(" + imageURL + ")",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "contain",
+    backgroundSize: "cover",
     backgroundPosition: "center",
   };
 
@@ -92,7 +92,7 @@ function PlayGame(props) {
       <div className="playgame-wrapper" style={divStyle}>
         <div className="playgame-prompt-bg">
           <h4>{cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}</h4>
-          <h5>{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h5>
+          <h6>{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h6>
         </div>
       </div>
       {cards.activeCard ? 
