@@ -57,22 +57,9 @@ textarea {
   align-items: center;
   overflow-x: hidden;
   overflow-y: auto;
+  margin-top: 10px;
 }
 
 .manage-cards h3 {
   margin: 5px 0;
-}
-
-.manage-this-card {
-  width: 80%;
-  display: flex;
-  margin: 5px 0;
-}
-
-.manage-this-card p {
-  width: 60%;
-}
-
-.manage-this-card button {
-  width: 20%;
 }
