@@ -1,5 +1,4 @@
 .manage-this-card {
-  height: 150px;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -16,16 +15,17 @@
 .manage-card-prompt p {
   font-size: 5vw;
   padding: 5px;
+  margin: 5px;
 }
 
 .manage-card-btns {
-  height: 20%;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 10px;
 }
 
 .manage-card-btn {
-  background-color: aquamarine;
+  background-color: white;
   height: 25px;
   width: 40px;
   display: flex;
@@ -35,6 +35,7 @@
   font-size: 4vw;
   color: black;
   border: 1px solid black;
+  border-radius: 5px;
   padding-top: 2px;
   transition: transform 0.4s ease;
 }
