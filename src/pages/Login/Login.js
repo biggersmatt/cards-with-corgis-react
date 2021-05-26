@@ -119,16 +119,13 @@ function Login(props) {
           />
         </div>
         <button className="login-btn" type="submit">Login</button>
-      </form>
-      <div className="login-create-party">
-        <h3>- Or -</h3>
+        <h4>- Or -</h4>
         <button 
           className="login-create-party-btn" 
           onClick={() => setRedirect(redirect = "/createparty")}>
           Create New Deck
         </button>
-      </div>
-
+      </form>
     </div>
   )
 }

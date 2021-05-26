@@ -19,12 +19,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
 }
 
 .login-wrapper h4 {
-  font-size: 9vw;
-  margin-top: 20px;
+  font-size: 6vw;
+  margin: 10px 0;
 }
 
 .login-section {
@@ -36,6 +38,7 @@
 
 .login-section label {
   font-size: 6vw;
+  margin: 3px 0;
 }
 
 .login-section input {
@@ -43,6 +46,7 @@
   width: 60%;
   font-size: 6vw;
   padding: 5px 0 5px 10px;
+  margin: 3px 0;
 }
 
 .login-btn {
@@ -69,16 +73,12 @@
   margin-bottom: 20px;
 }
 
-.login-create-party h3 {
-  font-size: 8vw;
-}
-
 .login-create-party-btn {
   height: 5vh;
   width: 40vw;
   font-size: 6vw;
   border-radius: 10px;
-  margin: 20px 0;
+  margin-bottom: 10px;
   transition: transform 0.4s ease;
 }
 
