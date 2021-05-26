@@ -22,13 +22,14 @@
 
 .create-card-wrapper h3 {
   font-size: 7vw;
-  margin-top: 5px;
+  margin: 5px 0;
 }
 
 .create-card-wrapper button {
   height: 4vh;
   width: 40vw;
   font-size: 6vw;
+  margin: 5px 0;
   transition: transform 0.4s ease;
 }
 .create-card-wrapper button:hover {

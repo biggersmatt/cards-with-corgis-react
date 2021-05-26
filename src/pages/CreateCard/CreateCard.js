@@ -87,7 +87,7 @@ function CreateCard(props) {
           id="prompt" 
           value={cardPage.prompt}
           cols="30" 
-          rows="5"
+          rows="4"
           onChange={handleChange}
           >
           </textarea>
