@@ -95,6 +95,7 @@ function CreateCard(props) {
       </form>
       <div className="manage-cards-wrapper">
       <h3>{props.firstName}'s Created Cards</h3>
+      <p>Total: {cardPage.existingCards.length}</p>
         <div className="manage-cards">
           {cardPage.existingCards.map(card => {
             return <ExistingCard 
