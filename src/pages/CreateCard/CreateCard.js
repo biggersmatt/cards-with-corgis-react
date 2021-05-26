@@ -73,8 +73,8 @@ function CreateCard(props) {
     <div className="create-card-container">
       <header>
         <h3>Welcome {props.firstName}</h3>
-        <p>Create new cards for {props.partyName}</p>
-        <p>Manage cards that you have already created.</p>
+        <p>Create new cards for your deck, {props.partyName}</p>
+        <p>Edit or Remove cards that you have already added to the deck.</p>
       </header>
       <form className="create-card-wrapper" onSubmit={handleSubmit}>
         <h3>Create a New Card</h3>
@@ -82,15 +82,15 @@ function CreateCard(props) {
           name="prompt" 
           id="prompt" 
           value={cardPage.prompt}
-          cols="30" 
-          rows="10"
+          cols="20" 
+          rows="8"
           onChange={handleChange}
           >
           </textarea>
         <button type="submit">Create Card</button>
       </form>
       <div className="manage-cards-wrapper">
-      <h3>{props.firstName}'s Cards</h3>
+      <h3>{props.firstName}'s Created Cards</h3>
         <div className="manage-cards">
           {cardPage.existingCards.map(card => {
             return <ExistingCard 
