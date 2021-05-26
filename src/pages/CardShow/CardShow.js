@@ -56,12 +56,15 @@ function CardShow() {
   return (
     <div className="card-show-container">
       <header>
-        <h3>Edit Your Cards</h3>
-        <p>You can edit/update this card.</p>
+        <h3>Edit This Card</h3>
+        <p>
+          Here you can edit/update this card and it will be added back to the 
+          deck with it's update.
+        </p>
       </header>
       <div className="card-show-wrapper">
         <h3>Update This Card</h3>
-        <form onSubmit={handleSubmit}>
+        <form className="card-show-form" onSubmit={handleSubmit}>
           <textarea 
             name="prompt" 
             id="prompt" 
