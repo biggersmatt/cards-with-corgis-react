@@ -32,15 +32,23 @@
   padding: 15px;
 }
 
-.card-show-form button {
+.card-show-form-btns {
   height: 50px;
-  width: 40%;
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-show-form-btn {
   font-size: 6vw;
   margin-top: 20px;
+  padding: 5px;
+  margin: 5px;
   transition: transform 0.4s ease;
 }
 
-.card-show-form button:hover {
+.card-show-form-btn:hover {
   cursor: pointer;
   transform: scale(1.10);
 }

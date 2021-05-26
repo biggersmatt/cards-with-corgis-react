@@ -40,6 +40,7 @@ function CardShow() {
       },
       body: JSON.stringify(card)
     })
+    .then(() => alert("This card has been updated"))
     .then(() => setRedirect(redirect = "/playorcreate/create"))
     .catch(err => console.log(err));
   }
@@ -74,7 +75,15 @@ function CardShow() {
             onChange={handleChange}
             >
             </textarea>
-          <button type="submit">Update Card</button>
+          <div className="card-show-form-btns">
+            <button 
+              className="card-show-form-btn"
+              onClick={() => setRedirect(redirect = "/playorcreate/create")}
+            >
+              Cancel
+            </button>
+            <button className="card-show-form-btn" type="submit">Update Card</button>
+          </div>
         </form>
       </div>
     </div>

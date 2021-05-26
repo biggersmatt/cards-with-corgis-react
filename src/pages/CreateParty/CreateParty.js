@@ -95,7 +95,7 @@ function CreateParty() {
 
       <header>
         <h3>Create a New Deck</h3>
-        <p>Once you've created a Deck, you'll be able to have anyone you provide the login info to add custom cards they've created.</p>
+        <p>Once you've created a deck, you'll be able to have anyone you provide the login info to add custom cards they've created.</p>
       </header>
 
       <form className="new-wrapper" onSubmit={handleSubmit}>
