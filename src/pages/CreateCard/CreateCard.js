@@ -40,22 +40,26 @@ function CreateCard(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newCard = {
-      prompt: cardPage.prompt,
-      author: props.firstName,
-      discard: false,
-      partyId: props.userId,
+    if(cardPage.prompt) {
+      const newCard = {
+        prompt: cardPage.prompt,
+        author: props.firstName,
+        discard: false,
+        partyId: props.userId,
+      }
+      fetch("http://localhost:4000/card", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newCard),
+      })
+      .then(() => alert("New Card Created"))
+      .then(() => handleExistingCards())
+      .catch(err => console.log(err))
+    } else {
+      alert("Cannot Create a Card Without Text.")
     }
-    fetch("http://localhost:4000/card", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newCard),
-    })
-    .then(() => alert("New Card Created"))
-    .then(() => handleExistingCards())
-    .catch(err => console.log(err))
   }
 
   const handleChange = (event) => {
