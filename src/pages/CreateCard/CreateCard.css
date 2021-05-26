@@ -50,6 +50,11 @@ textarea {
   align-items: center;
 }
 
+.manage-cards-wrapper h3 {
+  font-size: 7vw;
+  margin: 20px 0 10px 0;
+}
+
 .manage-cards {
   width: 100%;
   display: flex;
