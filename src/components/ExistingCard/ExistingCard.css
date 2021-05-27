@@ -1,5 +1,6 @@
 .manage-this-card {
   width: 80%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   background-color: var(--corange);
@@ -27,7 +28,7 @@
 .manage-card-btn {
   background-color: white;
   height: 25px;
-  width: 40px;
+  width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,4 +44,14 @@
 .manage-card-btn:hover {
   cursor: pointer;
   transform: scale(1.10);
+}
+
+@media (min-width: 550px) {
+  .manage-card-prompt p {
+    font-size: 24px;
+  }
+  
+  .manage-card-btn {
+    font-size: 22px;
+  }
 }

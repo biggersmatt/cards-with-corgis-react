@@ -34,8 +34,8 @@
 }
 
 .create-card-wrapper button {
-  height: 4vh;
-  width: 40vw;
+  height: 15%;
+  width: 50%;
   font-size: 6vw;
   margin: 5px 0;
   transition: transform 0.4s ease;
@@ -76,4 +76,28 @@ textarea {
 
 .manage-cards h3 {
   margin: 5px 0;
+}
+
+@media (min-width: 550px) {
+  .create-card-wrapper h3 {
+    font-size: 33px;
+  }
+  
+  .create-card-wrapper button {
+    height: 47.1875px;
+    width: 220px;
+    font-size: 33px;
+  }
+  
+  textarea {
+    font-size: 33px;
+  }
+  
+  .manage-cards-wrapper h3 {
+    font-size: 38.5px;
+  }
+
+  .manage-cards-wrapper p {
+    font-size: 24px;
+  }
 }

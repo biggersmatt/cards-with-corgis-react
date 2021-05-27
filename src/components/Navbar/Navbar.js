@@ -13,7 +13,7 @@ function Navbar(props) {
         : null
       }
       {props.userId ? 
-      <Link to="/playorcreate" className="navbar-link">Home</Link>   
+      <Link to="/playorcreate" className="navbar-link">Play or Create</Link>   
         : null
       }
       {props.userId ? 
