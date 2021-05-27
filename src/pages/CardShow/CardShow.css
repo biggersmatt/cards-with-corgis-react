@@ -13,17 +13,21 @@
   color: white;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
 }
 
 .card-show-wrapper {
   background: rgba(0,0,0, 0.3);;
   height: 50%;
+  max-height: 500px;
+  width: 100vw;
+  max-width: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
+
 .card-show-wrapper h3 {
   font-size: 8vw;
 }
@@ -58,3 +62,13 @@
   cursor: pointer;
   transform: scale(1.10);
 }
+
+@media (min-width: 550px) {
+  .card-show-wrapper h3 {
+    font-size: 44px;
+  }
+
+  .card-show-form-btn {
+    font-size: 33px;
+  }
+} 

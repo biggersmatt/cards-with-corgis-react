@@ -20,10 +20,6 @@ nav {
 }
 
 @media (min-width: 550px) {
-  nav {
-    background-color: pink;
-  }
-
   .navbar-link {
     font-size: 33px;
   }

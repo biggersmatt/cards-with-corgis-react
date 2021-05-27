@@ -44,10 +44,11 @@
   width: 70px;
   font-size: 5vw;
   border-radius: 100px;
+  border: 1px solid black;
   transition: transform 0.4s ease;
 }
 
-.playgame-next-btn {
+.playgame-next-btn:hover {
   cursor: pointer;
   transform: scale(1.10);
 }
