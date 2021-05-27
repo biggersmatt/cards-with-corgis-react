@@ -123,7 +123,9 @@ function Login(props) {
             onChange={handleChange}
           />
         </div>
-        <button className="login-btn" type="submit">Login</button>
+        <a href="#top">
+          <button className="login-btn" type="submit">Login</button>
+        </a>
         <div className="login-section">
           <h4>- Or -</h4>
           <button 
