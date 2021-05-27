@@ -41,7 +41,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="content">
       <Navbar userId={user.userId} handleSignOut={handleSignOut}></Navbar>
       <div>
         <Switch>
