@@ -1,5 +1,5 @@
 .playgame-container {
-  height: calc((100vh - 50px));
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,6 +9,7 @@
   background-color: var(--corange);
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 5vh;
 }
 
 .playgame-container h1 {

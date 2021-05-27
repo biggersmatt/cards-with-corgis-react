@@ -53,7 +53,7 @@ function CreateParty() {
       },
       body: JSON.stringify(newPartyCreated),
     })
-    .then(() => alert("New Party Created"))
+    .then(() => alert("New Deck Created"))
     .then(() => setRedirect(redirect = "/"))
     .catch(err => console.log(err))
   }
@@ -76,7 +76,7 @@ function CreateParty() {
         const parties = jsonData.allParties;
         for(let i = 0; i < parties.length; i++) {
           if(parties[i].partyName === newParty.partyName) {
-            return alert("That party name is already taken")
+            return alert("That deck name is already taken")
           }
         }
         handleCreateParty();

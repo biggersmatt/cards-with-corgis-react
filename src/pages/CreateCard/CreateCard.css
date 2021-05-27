@@ -1,10 +1,11 @@
 .create-card-container {
-  height: calc(100vh - 50px);
+  height: 95vh;
   background-image: url("https://images.unsplash.com/photo-1612160609504-334bdc6b70c9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80");
   background-position: 20% 50%;
   background-color: var(--corange);
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 5vh;
 }
 
 .create-card-shader {
