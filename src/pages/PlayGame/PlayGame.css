@@ -2,6 +2,7 @@
   height: calc((100vh - 50px));
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   background-image: url("https://images.unsplash.com/photo-1516575448682-93a05df8bf59?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80");
   background-position: 50% 50%;
@@ -10,9 +11,15 @@
   background-size: cover;
 }
 
+.playgame-container h1 {
+  color: white;
+  font-size: 10vw;
+}
+
 .playgame-wrapper {
   height: 60vh;
   width: 95%;
+  max-width: 1200px;
   margin: 25px 0;
   border-radius: 5px;
 }
@@ -43,4 +50,24 @@
 .playgame-next-btn {
   cursor: pointer;
   transform: scale(1.10);
+}
+
+@media (min-width: 550px) {
+  .playgame-container h1 {
+    font-size: 55px;
+  }
+
+  .playgame-prompt-bg {
+    font-size: 44px;
+  }
+  
+  .playgame-prompt-bg h4, .playgame-prompt-bg h6 {
+    padding: 40px;
+  }
+  
+  .playgame-next-btn {
+    height: 100px;
+    width: 140px;
+    font-size: 27.5px;
+  }
 }

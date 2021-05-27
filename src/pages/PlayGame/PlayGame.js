@@ -94,7 +94,7 @@ function PlayGame(props) {
   };
 
   return (
-    <div className="playgame-container">
+    <div className="playgame-container shadow">
       <h1>{props.partyName}</h1>
       <div className="playgame-wrapper" style={divStyle}>
         <div className="playgame-prompt-bg">
