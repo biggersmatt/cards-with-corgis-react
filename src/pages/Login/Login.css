@@ -12,10 +12,11 @@
 }
 
 .login-wrapper {
-  background-color: rgba(255,255,255,0.5);
+  background: rgba(0,0,0, 0.3);
   height: 70%;
   width: 70%;
   max-width: 500px;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
