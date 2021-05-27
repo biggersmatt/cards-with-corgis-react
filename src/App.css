@@ -9,18 +9,19 @@
 }
 
 body {
-  /* height: 100vh; */
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .content {
@@ -28,24 +29,24 @@ body {
 }
 
 header {
-  height: 10%;
+  height: 20%;
   width: 75%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding: 10px; */
-  /* margin: 5px; */
+  padding: 10px;
+  margin: 5px;
 }
 
 header h3 {
   font-size: 9vw;
-  /* padding: 1vw; */
+  padding: 1vw;
 }
 
 header p {
   font-size: 5vw;
-  /* padding: 1vw; */
+  padding: 1vw;
 }
 
 .shadow {
