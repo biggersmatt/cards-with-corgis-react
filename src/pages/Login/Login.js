@@ -83,6 +83,7 @@ function Login(props) {
 
   return (
     <div className="login-container">
+
       <header>
         <h3>Cards With Corgis</h3>
         <p>
@@ -91,6 +92,7 @@ function Login(props) {
           Your first name is how the deck finds your cards. Be sure to type it correctly.
         </p>
       </header>
+
       <form className="login-wrapper shadow" onSubmit={handleSubmit}>
         <h4>Login</h4>
         <div className="login-section">
@@ -121,13 +123,16 @@ function Login(props) {
           />
         </div>
         <button className="login-btn" type="submit">Login</button>
-        <h4>- Or -</h4>
-        <button 
-          className="login-create-party-btn" 
-          onClick={() => setRedirect(redirect = "/createparty")}>
-          Create New Deck
-        </button>
+        <div className="login-section">
+          <h4>- Or -</h4>
+          <button 
+            className="login-create-party-btn" 
+            onClick={() => setRedirect(redirect = "/createparty")}>
+            Create New Deck
+          </button>
+        </div>
       </form>
+
     </div>
   )
 }
