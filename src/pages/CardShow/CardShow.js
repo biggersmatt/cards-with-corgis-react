@@ -56,35 +56,37 @@ function CardShow() {
 
   return (
     <div className="card-show-container">
-      <header>
-        <h3>Edit This Card</h3>
-        <p>
-          Here you can edit/update this card and it will be added back to the 
-          deck with it's update.
-        </p>
-      </header>
-      <div className="card-show-wrapper">
-        <h3>Update This Card</h3>
-        <form className="card-show-form" onSubmit={handleSubmit}>
-          <textarea 
-            name="prompt" 
-            id="prompt" 
-            cols="30" 
-            rows="10"
-            value={`${card.prompt}`}
-            onChange={handleChange}
-            >
-            </textarea>
-          <div className="card-show-form-btns">
-            <button 
-              className="card-show-form-btn"
-              onClick={() => setRedirect(redirect = "/playorcreate/create")}
-            >
-              Cancel
-            </button>
-            <button className="card-show-form-btn" type="submit">Update Card</button>
-          </div>
-        </form>
+      <div className="card-show-shader">
+        <header>
+          <h3>Edit This Card</h3>
+          <p>
+            Here you can edit/update this card and it will be added back to the 
+            deck with it's update.
+          </p>
+        </header>
+        <div className="card-show-wrapper">
+          <h3>Update This Card</h3>
+          <form className="card-show-form" onSubmit={handleSubmit}>
+            <textarea 
+              name="prompt" 
+              id="prompt" 
+              cols="30" 
+              rows="10"
+              value={`${card.prompt}`}
+              onChange={handleChange}
+              >
+              </textarea>
+            <div className="card-show-form-btns">
+              <button 
+                className="card-show-form-btn"
+                onClick={() => setRedirect(redirect = "/playorcreate/create")}
+              >
+                Cancel
+              </button>
+              <button className="card-show-form-btn" type="submit">Update Card</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   )

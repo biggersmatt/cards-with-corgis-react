@@ -1,8 +1,5 @@
 .card-show-container {
   height: calc(100vh - 8vh);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background-image: url("https://images.unsplash.com/photo-1546975490-a79abdd54533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80");
   background-position: 55% 50%;
   background-color: var(--corange);
@@ -10,8 +7,17 @@
   background-size: cover;
 }
 
+.card-show-shader {
+  height: 100%;
+  background: rgba(0,0,0, 0.3);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .card-show-wrapper {
-  background-color: rgba(255,255,255,0.5);
+  background: rgba(0,0,0, 0.3);;
   height: 75%;
   display: flex;
   flex-direction: column;

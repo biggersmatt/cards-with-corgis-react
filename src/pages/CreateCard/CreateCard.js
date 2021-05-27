@@ -75,37 +75,40 @@ function CreateCard(props) {
 
   return (
     <div className="create-card-container">
-      <header>
-        <h3>Welcome {props.firstName}</h3>
-        <p>Create new cards for your deck, {props.partyName}</p>
-        <p>The scrollable area at the bottom is where you edit or delete cards that you have already added to the deck.</p>
-      </header>
-      <form className="create-card-wrapper" onSubmit={handleSubmit}>
-        <h3>Create a New Card</h3>
-        <textarea 
-          name="prompt" 
-          id="prompt" 
-          value={cardPage.prompt}
-          cols="30" 
-          rows="4"
-          onChange={handleChange}
-          >
-          </textarea>
-        <button type="submit">Create Card</button>
-      </form>
-      <div className="manage-cards-wrapper">
-      <h3>{props.firstName}'s Created Cards</h3>
-      <p>Total: {cardPage.existingCards.length}</p>
-        <div className="manage-cards">
-          {cardPage.existingCards.map(card => {
-            return <ExistingCard 
-                      key={card._id}
-                      cardId={card._id}
-                      prompt={card.prompt}
-                      handleExistingCards={handleExistingCards}
-                    />
-          })}
+      <div className="create-card-shader">
+        <header>
+          <h3>Welcome {props.firstName}</h3>
+          <p>Create new cards for your deck, {props.partyName}</p>
+          <p>The scrollable area at the bottom is where you edit or delete cards that you have already added to the deck.</p>
+        </header>
+        <form className="create-card-wrapper" onSubmit={handleSubmit}>
+          <h3>Create a New Card</h3>
+          <textarea 
+            name="prompt" 
+            id="prompt" 
+            value={cardPage.prompt}
+            cols="30" 
+            rows="4"
+            onChange={handleChange}
+            >
+            </textarea>
+          <button type="submit">Create Card</button>
+        </form>
+        <div className="manage-cards-wrapper">
+          <h3>{props.firstName}'s Created Cards</h3>
+          <p>Total: {cardPage.existingCards.length}</p>
+          <div className="manage-cards">
+            {cardPage.existingCards.map(card => {
+              return <ExistingCard 
+                        key={card._id}
+                        cardId={card._id}
+                        prompt={card.prompt}
+                        handleExistingCards={handleExistingCards}
+                      />
+            })}
+          </div>
         </div>
+
       </div>
     </div>
   )
