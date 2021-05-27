@@ -90,6 +90,7 @@ function PlayGame(props) {
     backgroundImage: "url(" + imageURL + ")",
     backgroundPosition: "50% 50%",
     backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
   };
 
   return (
