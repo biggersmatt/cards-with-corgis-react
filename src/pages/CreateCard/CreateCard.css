@@ -4,6 +4,7 @@
   background-position: 20% 50%;
   background-color: var(--corange);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .create-card-shader {

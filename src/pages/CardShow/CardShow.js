@@ -71,7 +71,7 @@ function CardShow() {
               name="prompt" 
               id="prompt" 
               cols="30" 
-              rows="10"
+              rows="6"
               value={`${card.prompt}`}
               onChange={handleChange}
               >

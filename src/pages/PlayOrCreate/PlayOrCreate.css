@@ -4,6 +4,7 @@
   background-position: 40% 50%;
   background-color: var(--corange);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .play-or-create-shader {
