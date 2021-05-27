@@ -24,18 +24,18 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px;
-  margin: 5px;
+  /* padding: 10px; */
+  /* margin: 5px; */
 }
 
 header h3 {
   font-size: 9vw;
-  padding: 1vw;
+  /* padding: 1vw; */
 }
 
 header p {
   font-size: 5vw;
-  padding: 1vw;
+  /* padding: 1vw; */
 }
 
 .shadow {
