@@ -91,7 +91,7 @@ function Login(props) {
           Your first name is how the deck finds your cards. Be sure to type it correctly.
         </p>
       </header>
-      <form className="login-wrapper" onSubmit={handleSubmit}>
+      <form className="login-wrapper shadow" onSubmit={handleSubmit}>
         <h4>Login</h4>
         <div className="login-section">
           <label htmlFor="first-name">Enter Your First Name</label>
