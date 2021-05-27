@@ -41,9 +41,9 @@ function App() {
   }
 
   return (
-    <div className="content">
+    <div className="wrapper">
       <Navbar userId={user.userId} handleSignOut={handleSignOut}></Navbar>
-      <div>
+      <div className="content">
         <Switch>
           <Route exact path="/">
             <Login handleUserInfo={handleUserInfo}></Login>
