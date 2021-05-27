@@ -1,5 +1,5 @@
 .playgame-container {
-  height: calc((100vh - 8vh));
+  height: calc((100vh - 50px));
   display: flex;
   flex-direction: column;
   align-items: center;

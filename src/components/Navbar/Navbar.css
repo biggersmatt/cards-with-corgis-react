@@ -1,6 +1,6 @@
 nav {
   background-color: var(--corange);
-  height: 8vh;
+  height: 50px;
   width: 100vw;
   display: flex;
   justify-content: space-around;
@@ -20,9 +20,9 @@ nav {
 }
 
 @media (min-width: 550px) {
-  /* nav {
+  nav {
     background-color: pink;
-  } */
+  }
 
   .navbar-link {
     font-size: 33px;

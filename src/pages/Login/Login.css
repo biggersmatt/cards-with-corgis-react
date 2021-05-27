@@ -1,5 +1,5 @@
 .login-container {
-  height: calc(100vh - 8vh);
+  height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
   justify-content: space-around;

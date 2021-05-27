@@ -1,5 +1,5 @@
 .card-show-container {
-  height: calc(100vh - 8vh);
+  height: calc(100vh - 50px);
   background-image: url("https://images.unsplash.com/photo-1546975490-a79abdd54533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80");
   background-position: 55% 50%;
   background-color: var(--corange);
