@@ -9,7 +9,7 @@ function ExistingCard(props) {
   let [redirect, setRedirect] = useState(null);
 
   const handleDelete = () => {
-    fetch(`http://localhost:4000/card/${props.cardId}`, {
+    fetch(`https://pacific-mesa-89997.herokuapp.com/card/${props.cardId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

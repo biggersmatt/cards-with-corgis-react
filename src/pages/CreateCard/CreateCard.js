@@ -20,7 +20,7 @@ function CreateCard(props) {
 
   const handleExistingCards = () => {
     let filteredCards = [];
-    fetch("http://localhost:4000/card")
+    fetch("https://pacific-mesa-89997.herokuapp.com/card")
     .then(response => response.json())
     .then(jsonData => {
       const allCards = jsonData.allCards;
@@ -47,7 +47,7 @@ function CreateCard(props) {
         discard: false,
         partyId: props.userId,
       }
-      fetch("http://localhost:4000/card", {
+      fetch("https://pacific-mesa-89997.herokuapp.com/card", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -32,7 +32,7 @@ function PlayGame(props) {
   }
 
   const handleAllCards = () => {
-    fetch("http://localhost:4000/card")
+    fetch("https://pacific-mesa-89997.herokuapp.com/card")
     .then(response => response.json())
     .then(jsonData => {
       const allCards = jsonData.allCards;

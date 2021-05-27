@@ -46,7 +46,7 @@ function CreateParty() {
       partyName: newParty.partyName,
       password: newParty.password,
     }
-    fetch("http://localhost:4000/party", {
+    fetch("https://pacific-mesa-89997.herokuapp.com/party", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ function CreateParty() {
     } else if(newParty.password !== newParty.confirmation) {
       alert("Passwords do not match");
     } else if(newParty.password === newParty.confirmation) {
-      fetch("http://localhost:4000/party")
+      fetch("https://pacific-mesa-89997.herokuapp.com/party")
       .then((response) => response.json())
       .then((jsonData) => {
         const parties = jsonData.allParties;

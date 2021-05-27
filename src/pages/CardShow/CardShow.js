@@ -11,7 +11,7 @@ function CardShow() {
   const { id } = useParams();
 
   const handleFetchThisCard = () => {
-    fetch(`http://localhost:4000/card/${id}`)
+    fetch(`https://pacific-mesa-89997.herokuapp.com/card/${id}`)
     .then(response => response.json())
     .then(jsonData => {
       const thisCard = jsonData.foundCard;
@@ -33,7 +33,7 @@ function CardShow() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:4000/card/${id}`, {
+    fetch(`https://pacific-mesa-89997.herokuapp.com/card/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

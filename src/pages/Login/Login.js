@@ -51,7 +51,7 @@ function Login(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:4000/party")
+    fetch("https://pacific-mesa-89997.herokuapp.com/party")
     .then(response => response.json())
     .then(jsonData => {
       const allParties = jsonData.allParties;
