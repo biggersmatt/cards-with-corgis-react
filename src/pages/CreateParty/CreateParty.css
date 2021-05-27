@@ -1,5 +1,5 @@
 .create-party-container {
-  height: calc(100vh - 50px);
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -13,7 +13,7 @@
 
 .new-wrapper {
   background: rgba(0,0,0, 0.3);
-  height: 70%;
+  height: 60%;
   width: 70%;
   max-width: 500px;
   color: white;
