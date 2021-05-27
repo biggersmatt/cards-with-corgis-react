@@ -97,7 +97,7 @@ function CreateParty() {
         <p>Once you've created a deck, you'll be able to have anyone you provide the login info to add custom cards they've created.</p>
       </header>
       <form className="new-wrapper" onSubmit={handleSubmit}>
-        <h4>What's Your Deck Name?</h4>
+        <h4>New Deck</h4>
         <div className="login-section">
           <label htmlFor="party-name">Deck Name</label>
           <input 
