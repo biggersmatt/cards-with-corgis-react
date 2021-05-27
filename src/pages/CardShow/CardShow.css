@@ -45,17 +45,22 @@
 
 .card-show-form-btns {
   height: 50px;
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .card-show-form-btn {
+  width: 50%;
   font-size: 6vw;
   margin-top: 20px;
   padding: 5px;
   margin: 5px;
+  color: white;
+  background-color: var(--corange);
+  border-radius: 10px;
+  border: 1px solid black;
   transition: transform 0.4s ease;
 }
 
