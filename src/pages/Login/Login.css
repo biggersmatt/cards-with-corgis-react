@@ -21,8 +21,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  border-radius: 10px 10px 0 0;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 .login-wrapper h4 {

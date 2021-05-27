@@ -92,12 +92,10 @@ function CreateParty() {
 
   return (
     <div className="create-party-container">
-
       <header>
         <h3>Create a New Deck</h3>
         <p>Once you've created a deck, you'll be able to have anyone you provide the login info to add custom cards they've created.</p>
       </header>
-
       <form className="new-wrapper" onSubmit={handleSubmit}>
         <h4>What's Your Deck Name?</h4>
         <div className="login-section">
@@ -129,7 +127,6 @@ function CreateParty() {
         </div>
         <button className="new-btn" type="submit">Create New Deck</button>
       </form>
-
     </div>
   )
 }

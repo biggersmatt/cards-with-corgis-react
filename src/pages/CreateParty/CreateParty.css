@@ -43,3 +43,15 @@
   cursor: pointer;
   transform: scale(1.10);
 }
+
+@media (min-width: 550px) {
+  .new-wrapper h4 {
+    font-size: 49.5px;
+  }
+  
+  .new-btn {
+    height: 58.9844px;
+    width: 220px;
+    font-size: 33px;
+  }
+}
