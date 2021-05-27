@@ -13,7 +13,7 @@
 
 .login-wrapper {
   background: rgba(0,0,0, 0.3);
-  height: 75%;
+  height: 10%;
   width: 70%;
   max-width: 500px;
   color: white;
@@ -66,7 +66,7 @@
   transform: scale(1.10);
 }
 
-.login-create-party {
+/* .login-create-party {
   background-color: rgba(255,255,255,0.5);
   height: 25%;
   width: 70%;
@@ -76,7 +76,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-}
+} */
 
 .login-create-party-btn {
   height: 5vh;
