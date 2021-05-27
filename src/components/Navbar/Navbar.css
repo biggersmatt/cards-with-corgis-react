@@ -1,4 +1,6 @@
 nav {
+  position: fixed;
+  top: 0;
   background-color: var(--corange);
   height: 5vh;
   width: 100vw;
