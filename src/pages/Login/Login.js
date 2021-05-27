@@ -88,7 +88,7 @@ function Login(props) {
       <header>
         <h3>Cards With Corgis</h3>
         <p>
-          Login to play with your deck.<br/>
+          A custom card drinking game made with friends.<br/>
           To create a new deck, click the button below.<br/>
           Your first name is how the deck finds your cards. Be sure to type it correctly.
         </p>
