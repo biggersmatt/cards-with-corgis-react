@@ -51,6 +51,7 @@ function Login(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    alert("Logging in takesa a few moments. Please wait after closing this window.")
     fetch("https://pacific-mesa-89997.herokuapp.com/party")
     .then(response => response.json())
     .then(jsonData => {

@@ -54,6 +54,9 @@ header p {
 }
 
 @media (min-width: 550px) {
+  header {
+    margin: 20px 0;
+  }
   header h3 {
     font-size: 49.5px;
   }
