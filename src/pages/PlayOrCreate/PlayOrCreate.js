@@ -16,7 +16,7 @@ function PlayOrCreate(props) {
     <div className="play-or-create-container">
       <div className="play-or-create-shader">
         <header className="play-or-create-header">
-          <h3>Deck: {props.partyName}!</h3>
+          <h3>Deck: {props.partyName}</h3>
           <p>"Play" shuffles all the cards in this deck so you can play Cards With Corgis!</p>
           <p>"Cards" allows you to create new cards for this deck or edit/remove cards that you have already created.</p>
           <p>Cards you have created will be searched for by the first name that you provided. It is case sensitive!</p>

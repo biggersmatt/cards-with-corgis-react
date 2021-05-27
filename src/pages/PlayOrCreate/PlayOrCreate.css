@@ -18,12 +18,12 @@
 }
 
 .play-or-create-header {
-  height: 45%;
+  height: 35%;
   width: 75%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 10px;
   margin: 5px;
 }
