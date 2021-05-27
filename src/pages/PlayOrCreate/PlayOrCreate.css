@@ -13,6 +13,7 @@
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -50,4 +51,12 @@
 .play-or-create-btn:hover {
   cursor: pointer;
   transform: scale(1.10);
+}
+
+@media (min-width: 550px) {
+.play-or-create-btn {
+    height: 150px;
+    width: 150px;
+    font-size: 44px;
+  }
 }
