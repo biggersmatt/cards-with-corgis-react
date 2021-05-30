@@ -92,7 +92,7 @@ function CreateParty() {
 
   return (
     <div className="create-party-container">
-      <header>
+      <header className="create-party-header">
         <h3>Create a New Deck</h3>
         <p>Once you've created a deck, you'll be able to have anyone you provide the login info to add custom cards they've created.</p>
       </header>
