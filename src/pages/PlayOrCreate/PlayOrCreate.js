@@ -15,6 +15,7 @@ function PlayOrCreate(props) {
   },[])
 
   const handleAllCards = () => {
+    let filteredTotal = "";
     fetch("https://pacific-mesa-89997.herokuapp.com/card")
     .then(response => response.json())
     .then(jsonData => {
@@ -25,10 +26,9 @@ function PlayOrCreate(props) {
           filteredCards.push(card);
         }
       })
-      const filteredTotal = filteredCards.length;
-      console.log(filteredTotal)
-      setTotal(filteredTotal)
+      filteredTotal = filteredCards.length;
     })
+    .then(() => setTotal(filteredTotal))
     .catch(err => console.log(err));
   }
 
