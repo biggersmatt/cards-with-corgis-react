@@ -21,14 +21,42 @@ function App() {
     userId: "",
     firstName: "",
     partyName: "",
+    total: "",
   })
 
-  const handleUserInfo = (userId, firstName, partyName) => {
+  const addedNewCard = () => {
+    let updatedTotal = user.total + 1;
     setUser({
-      userId,
-      firstName,
-      partyName,
+      userId: user.userId,
+      firstName: user.firstName,
+      partyName: user.partyName,
+      total: updatedTotal,
     })
+  }
+
+  const handleUserInfo = (userId, firstName, partyName) => {
+    let filteredTotal = "";
+    fetch("https://pacific-mesa-89997.herokuapp.com/card")
+    .then(response => response.json())
+    .then(jsonData => {
+      const allCards = jsonData.allCards;
+      let filteredCards = [];
+      allCards.forEach(card => {
+        if(card.partyId === userId) {
+          filteredCards.push(card);
+        }
+      })
+      filteredTotal = filteredCards.length;
+    })
+    .then(() => {
+      setUser({
+        userId,
+        firstName,
+        partyName,
+        total: filteredTotal,
+      })
+    })
+    .catch(err => console.log(err));
   }
 
   const handleSignOut = () => {
@@ -36,6 +64,7 @@ function App() {
       userId: "",
       firstName: "",
       partyName: "",
+      total: "",
     })
     alert("You have signed out")
   }
@@ -58,10 +87,10 @@ function App() {
             <CardShow></CardShow>
           </Route>
           <Route path="/playorcreate/create">
-            <CreateCard userId={user.userId} firstName={user.firstName} partyName={user.partyName}></CreateCard>
+            <CreateCard addedNewCard={addedNewCard} userId={user.userId} firstName={user.firstName} partyName={user.partyName}></CreateCard>
           </Route>
           <Route path="/playorcreate">
-            <PlayOrCreate userId={user.userId} firstName={user.firstName} partyName={user.partyName}></PlayOrCreate>
+            <PlayOrCreate userId={user.userId} firstName={user.firstName} partyName={user.partyName} total={user.total}></PlayOrCreate>
           </Route>
         </Switch>
       </div>
