@@ -97,8 +97,8 @@ function PlayGame(props) {
 
   return (
     <div className="playgame-container shadow">
-      <h1>{props.partyName}</h1>
       <div className="playgame-wrapper" style={divStyle}>
+        <h1 className="playgame-deck-name">{props.partyName} Deck</h1>
         <div className="playgame-prompt-bg">
           <h4>{cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}</h4>
           <h6>{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h6>

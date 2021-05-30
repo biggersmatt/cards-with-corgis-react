@@ -13,23 +13,28 @@
   background-size: cover;
 }
 
-.playgame-container h1 {
-  color: white;
-  font-size: 10vw;
-}
-
 .playgame-wrapper {
   height: 60%;
   width: 95%;
   max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 25px 0;
   border-radius: 5px;
+}
+
+.playgame-deck-name {
+  color: white;
+  font-size: 8vw;
+  margin-bottom: 25px;
 }
 
 .playgame-prompt-bg {
   background: rgba(0,0,0, 0.3);
   border-radius: 5px;
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,7 +42,8 @@
   font-size: 30px;
 }
 
-.playgame-prompt-bg h4, .playgame-prompt-bg h6 {
+.playgame-prompt-bg h4, 
+.playgame-prompt-bg h6 {
   padding: 20px;
 }
 
