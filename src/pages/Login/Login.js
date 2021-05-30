@@ -86,7 +86,7 @@ function Login(props) {
     <div className="login-container">
 
       <header className="login-header">
-        <h3>Cards With Corgis</h3>
+        <h3 className="login-title">Cards With Corgis</h3>
         <p>
           A custom card drinking game made with friends.<br/>
           To create a new deck, click the button below.<br/>

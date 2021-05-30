@@ -21,7 +21,11 @@ nav {
   transform: scale(1.25);
 }
 
-@media (min-width: 550px) {
+@media (min-width: 500px) {
+  nav {
+    background-color: pink;
+  }
+
   .navbar-link {
     font-size: 33px;
   }

@@ -79,7 +79,6 @@ function CreateCard(props) {
         <header className="create-card-header">
           <h3>Welcome {props.firstName}</h3>
           <p>Create new cards for your deck, {props.partyName}</p>
-          {/* <p>The scrollable area at the bottom is where you edit or delete cards that you have already added to the deck.</p> */}
         </header>
         <form className="create-card-wrapper" onSubmit={handleSubmit}>
           <h3>Create a New Card</h3>
