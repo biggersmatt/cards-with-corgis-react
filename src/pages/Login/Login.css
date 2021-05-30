@@ -8,7 +8,6 @@
   background-color: var(--corange);
   background-repeat: no-repeat;
   background-size: cover;
-  /* margin-top: 5vh; */
 }
 
 .login-header {
@@ -41,7 +40,6 @@
 }
 
 .login-section {
-  /* height: 20%; */
   width: 80%;
   display: flex;
   flex-direction: column;

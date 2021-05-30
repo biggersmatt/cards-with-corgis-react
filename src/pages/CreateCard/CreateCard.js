@@ -76,7 +76,7 @@ function CreateCard(props) {
   return (
     <div className="create-card-container">
       <div className="create-card-shader">
-        <header>
+        <header className="create-card-header">
           <h3>Welcome {props.firstName}</h3>
           <p>Create new cards for your deck, {props.partyName}</p>
           <p>The scrollable area at the bottom is where you edit or delete cards that you have already added to the deck.</p>

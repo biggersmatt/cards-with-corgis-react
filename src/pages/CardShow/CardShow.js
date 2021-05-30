@@ -57,7 +57,7 @@ function CardShow() {
   return (
     <div className="card-show-container">
       <div className="card-show-shader">
-        <header>
+        <header className="card-show-header">
           <h3>Edit This Card</h3>
           <p>
             Here you can edit/update this card and it will be added back to the 
