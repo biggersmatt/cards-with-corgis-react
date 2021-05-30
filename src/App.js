@@ -61,7 +61,7 @@ function App() {
             <CreateCard userId={user.userId} firstName={user.firstName} partyName={user.partyName}></CreateCard>
           </Route>
           <Route path="/playorcreate">
-            <PlayOrCreate firstName={user.firstName} partyName={user.partyName}></PlayOrCreate>
+            <PlayOrCreate userId={user.userId} firstName={user.firstName} partyName={user.partyName}></PlayOrCreate>
           </Route>
         </Switch>
       </div>
