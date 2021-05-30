@@ -52,7 +52,9 @@ function PlayGame(props) {
           randomCorgis.push(corgis[Math.floor(Math.random() * corgis.length)])
         })
         randomCorgis.pop();
-        randomCorgis.push("https://images.unsplash.com/photo-1575844261401-d69721eb5044?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
+        // randomCorgis.push("https://images.unsplash.com/photo-1575844261401-d69721eb5044?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
+        // eslint-disable-next-line no-useless-escape
+        randomCorgis.push("../../images/jeremysbirthday.png");
         const shuffledCorgis = shuffle(randomCorgis);
         setCards({
           index: cards.index,

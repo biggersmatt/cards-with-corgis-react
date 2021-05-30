@@ -85,7 +85,7 @@ function Login(props) {
   return (
     <div className="login-container">
 
-      <header>
+      <header className="login-header">
         <h3>Cards With Corgis</h3>
         <p>
           A custom card drinking game made with friends.<br/>
