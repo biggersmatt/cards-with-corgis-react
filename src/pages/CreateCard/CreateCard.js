@@ -107,7 +107,6 @@ function CreateCard(props) {
             })}
           </div>
         </div>
-
       </div>
     </div>
   )

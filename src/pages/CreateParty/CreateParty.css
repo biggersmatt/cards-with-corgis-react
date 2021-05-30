@@ -21,6 +21,14 @@
   margin: 5px;
 }
 
+.create-party-header h3 {
+  font-size: 8vw;
+}
+
+.create-party-header p {
+  font-size: 5vw;
+}
+
 .new-wrapper {
   background: rgba(0,0,0, 0.3);
   height: 60%;
@@ -56,7 +64,19 @@
   transform: scale(1.10);
 }
 
-@media (min-width: 550px) {
+@media (min-width: 500px) {
+  .create-party-header {
+    margin: 50px 0;
+  }
+
+  .create-party-header h3 {
+    font-size: 40px;
+  }
+  
+  .create-party-header p {
+    font-size: 25px;
+  }
+
   .new-wrapper h4 {
     font-size: 49.5px;
   }

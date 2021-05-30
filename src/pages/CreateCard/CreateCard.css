@@ -13,7 +13,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -23,9 +22,17 @@
   max-width: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 10px;
   margin: 5px;
+}
+
+.create-card-header h3 {
+  font-size: 7vw;
+}
+
+.create-card-header p {
+  font-size: 5vw;
 }
 
 .create-card-wrapper {
@@ -70,13 +77,14 @@ textarea {
 .manage-cards-wrapper {
   height: 60%;
   width: 80%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .manage-cards-wrapper h3 {
-  font-size: 7vw;
+  font-size: 6vw;
   margin: 20px 0 10px 0;
 }
 
@@ -94,7 +102,15 @@ textarea {
   margin: 5px 0;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 500px) {
+  .create-card-header h3 {
+    font-size: 35px;
+  }
+  
+  .create-card-header p {
+    font-size: 25px;
+  } 
+
   .create-card-wrapper h3 {
     font-size: 33px;
   }
@@ -110,10 +126,14 @@ textarea {
   }
   
   .manage-cards-wrapper h3 {
-    font-size: 38.5px;
+    font-size: 30px;
   }
 
   .manage-cards-wrapper p {
     font-size: 24px;
   }
+}
+
+@media (min-width: 1000px) {
+
 }

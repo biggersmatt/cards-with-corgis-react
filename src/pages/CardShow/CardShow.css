@@ -27,6 +27,14 @@
   margin: 5px;
 }
 
+.card-show-header h3 {
+  font-size: 8vw;
+}
+
+.card-show-header p {
+  font-size: 6vw;
+}
+
 .card-show-wrapper {
   background: rgba(0,0,0, 0.3);;
   height: 50%;
@@ -79,12 +87,26 @@
   transform: scale(1.10);
 }
 
-@media (min-width: 550px) {
+@media (min-width: 500px) {
+  .card-show-header h3 {
+    font-size: 40px;
+  }
+  
+  .card-show-header p {
+    font-size: 30px;
+  }
+
   .card-show-wrapper h3 {
     font-size: 44px;
   }
 
   .card-show-form-btn {
     font-size: 33px;
+  }
+} 
+
+@media (min-width: 550px) {
+  .card-show-container {
+    background-position: 70% 30%;
   }
 } 

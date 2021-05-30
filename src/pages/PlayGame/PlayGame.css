@@ -25,7 +25,7 @@
 
 .playgame-deck-name {
   position: absolute;
-  top: 5%;
+  top: 4%;
   color: white;
   font-size: 8vw;
 }
@@ -55,6 +55,7 @@
   background-color: var(--corange);
   border-radius: 10px;
   border: 1px solid black;
+  margin-bottom: 10px;
   transition: transform 0.4s ease;
 }
 
@@ -63,7 +64,17 @@
   transform: scale(1.10);
 }
 
-@media (min-width: 550px) {
+@media (min-width: 500px) {
+  .playgame-wrapper {
+    height: 80%;
+    width: 95%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0 50px 0;
+    border-radius: 5px;
+  }
   .playgame-container h1 {
     font-size: 55px;
   }
@@ -77,7 +88,7 @@
   }
   
   .playgame-next-btn {
-    height: 100px;
+    height: 50px;
     width: 140px;
     font-size: 27.5px;
   }
