@@ -19,7 +19,6 @@ function CreateCard(props) {
   },[])
 
   const handleExistingCards = () => {
-    console.log("handleExistingCards RAN")
     let filteredCards = [];
     fetch("https://pacific-mesa-89997.herokuapp.com/card")
     .then(response => response.json())

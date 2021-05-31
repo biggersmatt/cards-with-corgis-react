@@ -25,8 +25,19 @@
   padding: 10px;
 }
 
-.play-or-create-header h3 {
+.deck-name-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deck-name {
   font-size: 8vw;
+}
+
+.deck-total {
+  font-size: 4vw;
+  padding: 5px 0;
 }
 
 .play-or-create-header p {
@@ -65,10 +76,15 @@
     margin: 5px;
   }
 
-  .play-or-create-header h3 {
+  .deck-name {
     font-size: 40px;
   }
   
+  .deck-total {
+    font-size: 20px;
+    padding: 10px 0;
+  }
+
   .play-or-create-header p {
     font-size: 20px;
     padding: 10px 0;
@@ -86,10 +102,14 @@
 }
 
 @media (min-width: 1000px) {
-  .play-or-create-header h3 {
+  .deck-name {
     font-size: 50px;
   }
   
+  .deck-total {
+    font-size: 30px;
+  }
+
   .play-or-create-header p {
     font-size: 30px;
   }

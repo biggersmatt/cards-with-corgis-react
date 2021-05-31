@@ -25,7 +25,6 @@ function App() {
   })
 
   const addedNewCard = () => {
-    console.log("addedNewCard RAN")
     let updatedTotal = user.total + 1;
     setUser({
       userId: user.userId,
@@ -36,7 +35,6 @@ function App() {
   }
 
   const deleteCard = () => {
-    console.log("deleteCard RAN")
     let updatedTotal = user.total - 1;
     setUser({
       userId: user.userId,
