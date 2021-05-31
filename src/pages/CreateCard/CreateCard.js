@@ -19,6 +19,7 @@ function CreateCard(props) {
   },[])
 
   const handleExistingCards = () => {
+    console.log("handleExistingCards RAN")
     let filteredCards = [];
     fetch("https://pacific-mesa-89997.herokuapp.com/card")
     .then(response => response.json())
@@ -55,6 +56,7 @@ function CreateCard(props) {
         body: JSON.stringify(newCard),
       })
       .then(() => alert("New Card Created"))
+      .then(() => props.addedNewCard())
       .then(() => handleExistingCards())
       .catch(err => console.log(err))
     } else {
@@ -103,6 +105,7 @@ function CreateCard(props) {
                         cardId={card._id}
                         prompt={card.prompt}
                         handleExistingCards={handleExistingCards}
+                        deleteCard={props.deleteCard}
                       />
             })}
           </div>

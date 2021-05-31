@@ -25,7 +25,19 @@ function App() {
   })
 
   const addedNewCard = () => {
+    console.log("addedNewCard RAN")
     let updatedTotal = user.total + 1;
+    setUser({
+      userId: user.userId,
+      firstName: user.firstName,
+      partyName: user.partyName,
+      total: updatedTotal,
+    })
+  }
+
+  const deleteCard = () => {
+    console.log("deleteCard RAN")
+    let updatedTotal = user.total - 1;
     setUser({
       userId: user.userId,
       firstName: user.firstName,
@@ -87,7 +99,7 @@ function App() {
             <CardShow></CardShow>
           </Route>
           <Route path="/playorcreate/create">
-            <CreateCard addedNewCard={addedNewCard} userId={user.userId} firstName={user.firstName} partyName={user.partyName}></CreateCard>
+            <CreateCard  deleteCard={deleteCard} addedNewCard={addedNewCard} userId={user.userId} firstName={user.firstName} partyName={user.partyName}></CreateCard>
           </Route>
           <Route path="/playorcreate">
             <PlayOrCreate userId={user.userId} firstName={user.firstName} partyName={user.partyName} total={user.total}></PlayOrCreate>
