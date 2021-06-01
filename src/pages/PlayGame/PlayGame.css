@@ -30,6 +30,19 @@
   font-size: 8vw;
 }
 
+.playgame-wildcard {
+  height: 100%;
+  width: 100%;
+}
+
+.wildcard-active {
+  background-image: url("../../images/jeremysbirthday.png");
+  background-position: 45%;
+  background-color: var(--corange);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .playgame-prompt-bg {
   background: rgba(0,0,0, 0.3);
   border-radius: 5px;
@@ -42,9 +55,15 @@
   font-size: 30px;
 }
 
-.playgame-prompt-bg h4, 
-.playgame-prompt-bg h6 {
+.playgame-prompt,
+.playgame-author,
+.wildcard-rule-header,
+.wildcard-rule-footer {
   padding: 20px;
+}
+
+.hidden {
+  display: none;
 }
 
 .playgame-next-btn {
@@ -83,7 +102,10 @@
     font-size: 44px;
   }
   
-  .playgame-prompt-bg h4, .playgame-prompt-bg h6 {
+  .playgame-prompt,
+  .playgame-author,
+  .wildcard-rule-header,
+  .wildcard-rule-footer {
     padding: 40px;
   }
   

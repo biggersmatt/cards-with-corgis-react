@@ -99,9 +99,13 @@ function PlayGame(props) {
     <div className="playgame-container shadow">
       <div className="playgame-wrapper" style={divStyle}>
         <h1 className="playgame-deck-name">{props.partyName} Deck</h1>
-        <div className="playgame-prompt-bg">
-          <h4>{cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}</h4>
-          <h6>{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h6>
+        <div className="playgame-wildcard wildcard-active">
+          <div className="playgame-prompt-bg">
+            <h4 className="playgame-prompt hidden">{cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}</h4>
+            <h6 className="playgame-author hidden">{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h6>
+            <h4 className="wildcard-rule-header">Make a Permenant Rule!</h4>
+            <h6 className="wildcard-rule-footer">A Majority of Players Have to Agree That The Rule is Fun and Fair</h6>
+          </div>
         </div>
       </div>
       {cards.activeCard ? 
