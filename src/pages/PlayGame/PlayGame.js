@@ -11,6 +11,8 @@ function PlayGame(props) {
     activeCard: {},
     deck: [],
     corgis: [],
+    wildcardIndexArray: [],
+    hasWilds: true,
   })
   let [redirect, setRedirect] = useState(null);
 
@@ -32,6 +34,10 @@ function PlayGame(props) {
   }
 
   const handleAllCards = () => {
+    let activeCard = {};
+    let deck = [];
+    let corgis = [];
+    let wildcardIndexArray = [];
     fetch("https://pacific-mesa-89997.herokuapp.com/card")
     .then(response => response.json())
     .then(jsonData => {
@@ -42,27 +48,33 @@ function PlayGame(props) {
           filteredCards.push(card);
         }
       })
-      const shuffledCards = shuffle(filteredCards);
+      deck = shuffle(filteredCards);
+      activeCard = deck[cards.index];
       fetch("https://dog.ceo/api/breed/corgi/images")
       .then(response => response.json())
       .then(jsonData => {
-        const corgis = jsonData.message;
+        const corgiAPI = jsonData.message;
         let randomCorgis = [];
-        shuffledCards.forEach(card => {
-          randomCorgis.push(corgis[Math.floor(Math.random() * corgis.length)])
+        deck.forEach(card => {
+          randomCorgis.push(corgiAPI[Math.floor(Math.random() * corgiAPI.length)])
         })
         randomCorgis.pop();
         // randomCorgis.push("https://images.unsplash.com/photo-1575844261401-d69721eb5044?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
         // eslint-disable-next-line no-useless-escape
         randomCorgis.push("../../images/jeremysbirthday.png");
-        const shuffledCorgis = shuffle(randomCorgis);
+        corgis = shuffle(randomCorgis);
+
+      })
+      .then(() => {
         setCards({
           index: cards.index,
-          activeCard: shuffledCards[cards.index],
-          deck: shuffledCards,
-          corgis: shuffledCorgis,
+          activeCard,
+          deck,
+          corgis,
+          hasWilds: false,
         })
       })
+      .catch(err => console.log(err));
     })
     .catch(err => console.log(err));
   }
@@ -75,6 +87,8 @@ function PlayGame(props) {
         activeCard: cards.deck[newIndex],
         deck: cards.deck,
         corgis: cards.corgis,
+        wildcardIndexArray: cards.wildcardIndexArray,
+        hasWilds: true,
       })
     } else {
       alert("Out of Cards");
@@ -82,6 +96,29 @@ function PlayGame(props) {
     }
   }
 
+  
+  const handleWildCardGenerator = () => {
+    const cardsInDeckMinimum = 4;
+    const wildcardIndexArray = [];
+    const numberOfWildcards = Math.floor(cards.deck.length / cardsInDeckMinimum);
+    for(let i = 0; i < numberOfWildcards; i++) {
+      const randomIndex = Math.floor(Math.random() * (cards.deck.length - 0) + 0);
+      wildcardIndexArray.push(randomIndex);
+    }
+    setCards({
+      index: cards.index,
+      activeCard: cards.activeCard,
+      deck: cards.deck,
+      corgis: cards.corgis,
+      wildcardIndexArray,
+      hasWilds: true,
+    })
+  }
+  
+  if(cards.deck.length !== 0 && !cards.hasWilds) {
+    handleWildCardGenerator();
+  }
+  
   if(redirect) {
     return <Redirect to={redirect} />
   }
@@ -94,8 +131,8 @@ function PlayGame(props) {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   };
-
-  const active = true;
+  
+  const active = false;
 
   return (
     <div className="playgame-container shadow">
@@ -110,7 +147,7 @@ function PlayGame(props) {
               {cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}
             </h6>
             <h4 className={`wildcard-rule-header ${!active ? "hidden" : null}`}>
-              Make a Permenant Rule!
+              !!! WILD CARD !!! <br/> Make a Permanent Rule!
             </h4>
             <h6 className={`wildcard-rule-footer ${!active ? "hidden" : null}`}>
               A Majority of Players Have to Agree That The Rule is Fun and Fair
