@@ -95,7 +95,7 @@ function PlayGame(props) {
     backgroundSize: "cover",
   };
 
-  const active = false;
+  const active = true;
 
   return (
     <div className="playgame-container shadow">
@@ -103,10 +103,18 @@ function PlayGame(props) {
         <h1 className="playgame-deck-name">{props.partyName} Deck</h1>
         <div className={`playgame-wildcard ${active ? "wildcard-active" : null}`}>
           <div className="playgame-prompt-bg">
-            <h4 className={`playgame-prompt ${active ? "hidden" : null}`}>{cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}</h4>
-            <h6 className={`playgame-author ${active ? "hidden" : null}`}>{cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}</h6>
-            <h4 className={`wildcard-rule-header ${!active ? "hidden" : null}`}>Make a Permenant Rule!</h4>
-            <h6 className={`wildcard-rule-footer ${!active ? "hidden" : null}`}>A Majority of Players Have to Agree That The Rule is Fun and Fair</h6>
+            <h4 className={`playgame-prompt ${active ? "hidden" : null}`}>
+              {cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}
+            </h4>
+            <h6 className={`playgame-author ${active ? "hidden" : null}`}>
+              {cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}
+            </h6>
+            <h4 className={`wildcard-rule-header ${!active ? "hidden" : null}`}>
+              Make a Permenant Rule!
+            </h4>
+            <h6 className={`wildcard-rule-footer ${!active ? "hidden" : null}`}>
+              A Majority of Players Have to Agree That The Rule is Fun and Fair
+            </h6>
           </div>
         </div>
       </div>
