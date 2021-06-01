@@ -11,8 +11,9 @@ function PlayGame(props) {
     activeCard: {},
     deck: [],
     corgis: [],
-    wildcardIndexArray: [],
+    wildcardIndexArray: [ ],
     hasWilds: true,
+    wildActive: false,
   })
   let [redirect, setRedirect] = useState(null);
 
@@ -37,7 +38,6 @@ function PlayGame(props) {
     let activeCard = {};
     let deck = [];
     let corgis = [];
-    let wildcardIndexArray = [];
     fetch("https://pacific-mesa-89997.herokuapp.com/card")
     .then(response => response.json())
     .then(jsonData => {
@@ -58,10 +58,7 @@ function PlayGame(props) {
         deck.forEach(card => {
           randomCorgis.push(corgiAPI[Math.floor(Math.random() * corgiAPI.length)])
         })
-        randomCorgis.pop();
         // randomCorgis.push("https://images.unsplash.com/photo-1575844261401-d69721eb5044?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
-        // eslint-disable-next-line no-useless-escape
-        randomCorgis.push("../../images/jeremysbirthday.png");
         corgis = shuffle(randomCorgis);
 
       })
@@ -72,6 +69,8 @@ function PlayGame(props) {
           deck,
           corgis,
           hasWilds: false,
+          wildcardIndexArray: cards.wildcardIndexArray,
+          wildActive: false,
         })
       })
       .catch(err => console.log(err));
@@ -82,14 +81,7 @@ function PlayGame(props) {
   const handleNextCard = () => {
     if(cards.deck.length - 1 > cards.index) {
       let newIndex = cards.index + 1;
-      setCards({
-        index: newIndex,
-        activeCard: cards.deck[newIndex],
-        deck: cards.deck,
-        corgis: cards.corgis,
-        wildcardIndexArray: cards.wildcardIndexArray,
-        hasWilds: true,
-      })
+      handleWildCardToggle(newIndex);
     } else {
       alert("Out of Cards");
       setRedirect(redirect = "/playorcreate")
@@ -98,11 +90,11 @@ function PlayGame(props) {
 
   
   const handleWildCardGenerator = () => {
-    const cardsInDeckMinimum = 4;
+    const cardsInDeckMinimum = 10;
     const wildcardIndexArray = [];
     const numberOfWildcards = Math.floor(cards.deck.length / cardsInDeckMinimum);
     for(let i = 0; i < numberOfWildcards; i++) {
-      const randomIndex = Math.floor(Math.random() * (cards.deck.length - 0) + 0);
+      const randomIndex = Math.floor(Math.random() * (cards.deck.length - 1) + 1);
       wildcardIndexArray.push(randomIndex);
     }
     setCards({
@@ -112,6 +104,32 @@ function PlayGame(props) {
       corgis: cards.corgis,
       wildcardIndexArray,
       hasWilds: true,
+      wildActive: false,
+    })
+  }
+
+  const handleWildCardToggle = (newIndex) => {
+    for(let i = 0; i < cards.wildcardIndexArray.length; i++) {
+      if(cards.index + 1 === cards.wildcardIndexArray[i]) {
+        return setCards({
+          index: newIndex,
+          activeCard: cards.deck[newIndex],
+          deck: cards.deck,
+          corgis: cards.corgis,
+          wildcardIndexArray: cards.wildcardIndexArray,
+          hasWilds: true,
+          wildActive: true,
+        })
+      }
+    }
+    setCards({
+      index: newIndex,
+      activeCard: cards.deck[newIndex],
+      deck: cards.deck,
+      corgis: cards.corgis,
+      wildcardIndexArray: cards.wildcardIndexArray,
+      hasWilds: true,
+      wildActive: false,
     })
   }
   
@@ -131,25 +149,23 @@ function PlayGame(props) {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   };
-  
-  const active = false;
 
   return (
     <div className="playgame-container shadow">
       <div className="playgame-wrapper" style={divStyle}>
         <h1 className="playgame-deck-name">{props.partyName} Deck</h1>
-        <div className={`playgame-wildcard ${active ? "wildcard-active" : null}`}>
+        <div className={`playgame-wildcard ${cards.wildActive ? "wildcard-active" : null}`}>
           <div className="playgame-prompt-bg">
-            <h4 className={`playgame-prompt ${active ? "hidden" : null}`}>
+            <h4 className={`playgame-prompt ${cards.wildActive ? "hidden" : null}`}>
               {cards.activeCard ? cards.activeCard.prompt : "No cards have been created for this deck yet."}
             </h4>
-            <h6 className={`playgame-author ${active ? "hidden" : null}`}>
+            <h6 className={`playgame-author ${cards.wildActive ? "hidden" : null}`}>
               {cards.activeCard ? `Created by: ${cards.activeCard.author}` : null}
             </h6>
-            <h4 className={`wildcard-rule-header ${!active ? "hidden" : null}`}>
+            <h4 className={`wildcard-rule-header ${!cards.wildActive ? "hidden" : null}`}>
               !!! WILD CARD !!! <br/> Make a Permanent Rule!
             </h4>
-            <h6 className={`wildcard-rule-footer ${!active ? "hidden" : null}`}>
+            <h6 className={`wildcard-rule-footer ${!cards.wildActive ? "hidden" : null}`}>
               A Majority of Players Have to Agree That The Rule is Fun and Fair
             </h6>
           </div>
