@@ -6,10 +6,10 @@
   /* background-image: url("https://images.unsplash.com/photo-1516575448682-93a05df8bf59?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"); */
   background-image: url("../../images/jeremyissatan.png");
   /* background-image: url("../../images/jeremysbirthday.png"); */
-  background-position: 45%;
+  /* background-position: 50%; */
   background-color: var(--corange);
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-size: 33% 100%;
 }
 
 .playgame-wrapper {
