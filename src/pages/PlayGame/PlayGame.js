@@ -90,7 +90,7 @@ function PlayGame(props) {
 
   
   const handleWildCardGenerator = () => {
-    const cardsInDeckMinimum = 10;
+    const cardsInDeckMinimum = 25;
     const wildcardIndexArray = [];
     const numberOfWildcards = Math.floor(cards.deck.length / cardsInDeckMinimum);
     for(let i = 0; i < numberOfWildcards; i++) {
